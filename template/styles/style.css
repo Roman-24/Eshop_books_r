@@ -4,6 +4,11 @@
     --block-backgroud: #e5e5e5;
 }
 
+.btn-primary {
+    background-color: #1f1f1f;
+    border: none;
+}
+
 header {
     background: var(--primary);
 }
@@ -68,7 +73,7 @@ aside nav a:hover {
     border-bottom: 1px solid #b6b6b6;
 }
 
-.list-item {
+.book-item {
     margin: 15px 0;
     transition: .2s;
     color: var(--text-color);
@@ -76,34 +81,34 @@ aside nav a:hover {
     display: block;
 }
 
-.list-item:hover {
+.book-item:hover {
     transform: scale(1.02);
     color: var(--text-color);
 
 }
 
-.list-item .book-title {
+.book-item .book-title {
     font-size: 1.8em;
     font-weight: bold;
     font-style: normal;
 }
 
-.list-item .image {
+.book-item .image {
     background-size: cover;
     background-position: center;
 }
 
-.list-item .item-details {
+.book-item .item-details {
     padding-left: 20px;
     margin-bottom: 5px;
 }
 
-.list-item .book-description {
+.book-item .book-description {
     margin-top: 4px;
     margin-bottom: 0;
 }
 
-.list-item .book-price {
+.book-item .book-price {
     font-size: 1.6em;
     font-weight: bold;
 }
