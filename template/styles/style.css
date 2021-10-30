@@ -1,0 +1,12 @@
+:root {
+    --primary: #222;
+}
+
+nav {
+    background: var(--primary);
+    padding: 8px 0;
+}
+
+header {
+    background: #444;
+}
