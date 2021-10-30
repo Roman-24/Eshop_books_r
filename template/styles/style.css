@@ -1,14 +1,15 @@
 :root {
     --primary: #222;
-}
-
-nav {
-    background: var(--primary);
-    padding: 8px 0;
+    --text-color: #000;
+    --block-backgroud: #c4c4c4;
 }
 
 header {
-    background: #444;
+    background: var(--primary);
+}
+
+.top-nav {
+    padding: 8px 0;
 }
 
 .banner {
@@ -16,4 +17,52 @@ header {
     background-size: cover;
     height: 40vh;
     min-height: 240px;
+    margin-bottom: 20px;
+}
+
+nav {
+    padding: 25px 35px;
+    background: var(--block-backgroud);
+    margin-right: 10px;
+}
+
+aside nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+aside nav a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+aside nav a:hover {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+main {
+    background: blue;
+}
+
+aside nav .category {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 3px;
+}
+
+aside nav .category:not(:first-child) {
+    margin-top: 15px;
+}
+
+
+aside nav .sub-category {
+    padding-left: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 20px 0;
+    background: #222;
+    color: white;
 }

@@ -19,31 +19,71 @@
 
 <body>
 <header>
-    <nav>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-3">
-                    <img src="assets/logo.png" alt="Logo">
-                </div>
-                <div class="col-6">
-                    <div class="input-group">
-                        <input type="search" class="form-control" placeholder="Search" aria-label="Search"
-                               aria-describedby="search-addon"/>
-                        <span class="input-group-text border-0" id="search-addon">
+    <div class="container top-nav">
+        <div class="row align-items-center">
+            <div class="col-3">
+                <img src="assets/logo.png" alt="Logo">
+            </div>
+            <div class="col-6">
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="Search" aria-label="Search"
+                           aria-describedby="search-addon"/>
+                    <span class="input-group-text border-0" id="search-addon">
                         <i class="fas fa-search"></i>
                       </span>
-                    </div>
-                </div>
-                <div class="col-3 buttons">
-                    <button class="btn btn-primary">Prihlásiť</button>
-                    <button class="btn btn-secondary">Registrovať</button>
-                    <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></button>
                 </div>
             </div>
+            <div class="col-3 buttons">
+                <button class="btn btn-primary">Prihlásiť</button>
+                <button class="btn btn-secondary">Registrovať</button>
+                <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></button>
+            </div>
         </div>
-    </nav>
+    </div>
     <div class="banner" style="background-image: url(assets/banner.jpg)"></div>
 </header>
+<div class="container">
+    <div class="row">
+        <!-- TODO je vhodne pouzitie asidu?-->
+        <aside class="col-3">
+            <nav>
+                <ul>
+                    <!-- TODO dať tu iba li alebo ako rozlíšiť meno kateogrie/subk pre citacky or podobne-->
+                    <li class="category">Kategoria</li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    <li class="category">Kategoria</li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    <li class="category">Kategoria</li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    <li class="category">Kategoria</li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                </ul>
+
+            </nav>
+        </aside>
+        <main class="col-9">Main</main>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores excepturi, illum obcaecati officia perferendis saepe. Debitis
+                esse, est fugiat in itaque iure labore maiores minus quasi repellat suscipit tenetur veniam.
+            </div>
+            <div class="col-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci asperiores, consequuntur dicta ducimus laudantium modi
+                neque provident quia quos repudiandae sed soluta tenetur. Delectus doloremque libero necessitatibus quisquam quos!
+            </div>
+        </div>
+    </div>
+</footer>
 
 <!-- Optional JavaScript; choose one of the two! -->
 
