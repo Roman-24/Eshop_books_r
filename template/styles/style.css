@@ -10,3 +10,10 @@ nav {
 header {
     background: #444;
 }
+
+.banner {
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
+    min-height: 240px;
+}
