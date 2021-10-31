@@ -226,3 +226,7 @@ form input[type="submit"] {
     padding-bottom: 0px;
     border-bottom: 0px solid #b6b6b6;
 }
+
+.quantity-selection {
+    max-height: 5vh;
+}
