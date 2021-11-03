@@ -66,7 +66,7 @@
                     <li class="sub-category"><a href="#">Pod kategooria</a></li>
                     <li class="sub-category"><a href="#">Pod kategooria</a></li>
                 </ul>
-                <a href="search.html" class="btn btn-secondary">Pokročilé hľadanie</a>
+                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#advanced-search">Pokročilé hľadanie</button>
             </nav>
         </aside>
         <main class="col-9">
@@ -233,6 +233,37 @@
         </div>
     </div>
 </footer>
+
+
+<!-- MODALS -->
+<!-- ADVANCED SEARCH -->
+<div class="modal fade" id="advanced-search" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content" action="#">
+            <div class="modal-header">
+                <h5 class="modal-title">Vyhľadávanie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <label for="name">Názov knihy</label>
+                    <input class="form-control" id="name" placeholder="Názov knihy" type="text"/>
+
+                    <label for="autor">Autor</label>
+                    <input class="form-control" id="autor" placeholder="Autor" type="text"/>
+
+                    <label for="year">Rok vydania</label>
+                    <input class="form-control" id="year" placeholder="Rok vydania" type="text"/>
+
+                    <label for="genre">Žáner</label>
+                    <input class="form-control" id="genre" placeholder="Žáner" type="text"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" value="Vyhľadať"/>
+            </div>
+        </form>
+    </div>
+</div>
 
 <!-- Optional JavaScript; choose one of the two! -->
 

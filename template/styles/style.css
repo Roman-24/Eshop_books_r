@@ -6,6 +6,14 @@
 
 .btn-primary {
     background-color: #1f1f1f;
+}
+
+.btn-primary:focus,
+.btn-primary:hover {
+    background-color: #3f3f3f;
+}
+
+.btn {
     border: none;
 }
 
@@ -190,8 +198,6 @@ form {
 }
 
 form label, form input {
-    display: block;
-    width: 100%;
 }
 
 form label {
@@ -204,23 +210,23 @@ form input {
     margin-bottom: 12px;
 }
 
-form input[type="submit"] {
-    width: 250px;
-    font-size: 1em;
-    margin-top: 10px;
-}
-
 .form-half-width {
     max-width: 50%;
 }
 
-/* FORM END */
+/* MODAL */
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
 
+/* FORM END */
 .category-selected {
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #b6b6b6;
 }
+
 .category-selected h2 {
     margin-bottom: 0px;
     padding-bottom: 0px;
