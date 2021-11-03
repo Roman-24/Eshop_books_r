@@ -37,7 +37,7 @@
     box-shadow: none;
 }
 
-.mt-n5{
+.mt-n5 {
     margin-top: -5px;
 }
 
@@ -118,9 +118,11 @@ aside nav a:hover {
 }
 
 .book-item:hover {
-    transform: scale(1.02);
     color: var(--text-color);
+}
 
+.books-list .book-item:hover {
+    transform: scale(1.02);
 }
 
 .book-item .book-title {
