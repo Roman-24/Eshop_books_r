@@ -16,6 +16,7 @@
 
     <!-- OWN CSS   -->
     <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/shopping-cart.css" rel="stylesheet">
 </head>
 
 <body>
@@ -48,36 +49,46 @@
         <main class="col-12">
             <div class="block">
                 <h2>Obsah nákupného košíka</h2>
-                <a href="#" class="book-item">
-                    <div class="row m-0">
-                        <div class="image col-2" style="background-image: url(assets/book-cover.jpg)"></div>
-                        <div class="item-details col-8">
-                            <cite class="book-title">Zimné rozprávky</cite>
-                            <div class="book-info">Jan Jánek,
-                                <time datetime="2015-06-21" title="Jun 21 2015">21.6.2015</time>
+                <div class="basket-list">
+                    <a href="#" class="book-item">
+                        <div class="row m-0">
+                            <div class="image col-2" style="background-image: url(assets/book-cover.jpg)"></div>
+                            <div class="item-details col-8">
+                                <cite class="book-title">Zimné rozprávky</cite>
+                                <div class="book-info">Jan Jánek,
+                                    <time datetime="2015-06-21" title="Jun 21 2015">21.6.2015</time>
+                                </div>
+                                <p class="book-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab adipisci commodi
+                                    distinctio dolore eligendi ex fugiat, illum iste
+                                    itaque laudantium magni molestiae molestias odio quae sed, veritatis. Accusamus,
+                                    doloribus!
+                                </p>
+                                <div class="book-price">99,99€</div>
                             </div>
-                            <p class="book-description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab adipisci commodi
-                                distinctio dolore eligendi ex fugiat, illum iste
-                                itaque laudantium magni molestiae molestias odio quae sed, veritatis. Accusamus,
-                                doloribus!
-                            </p>
-                            <div class="book-price">99,99€</div>
+                            <div class="col-2 align-self-center">
+                                <div class="d-flex text-center quantity-selection ">
+
+                                    <button class="btn btn-link px-2"
+                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input id="form1" min="0" name="quantity" value="1" type="number"
+                                           class="form-control form-control-sm"/>
+                                    <button class="btn btn-link px-2"
+                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    <div class="text-center mb-1">
+                                        <button class="btn btn-link"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+
                         </div>
-                        <div class="col-2 d-flex text-center quantity-selection align-self-center">
-                            <button class="btn btn-link px-2"
-                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <input id="form1" min="0" name="quantity" value="1" type="number"
-                                   class="form-control form-control-sm"/>
-                            <button class="btn btn-link px-2"
-                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
                 <div class="text-center">
                     <!-- INPUT aby sa posielal dotaz na php-->
                     <input type="submit" value="Nakúpiť produkty" class="btn btn-primary">

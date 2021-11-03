@@ -23,6 +23,20 @@
     text-decoration: underline;
 }
 
+.btn-link {
+    color: var(--link-color);
+    transition: .2s;
+}
+
+.btn-link:hover {
+    color: var(--link-color);
+    transform: scale(1.2);
+}
+
+.btn-link:focus {
+    box-shadow: none;
+}
+
 header {
     background: var(--primary);
 }

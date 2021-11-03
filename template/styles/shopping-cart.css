@@ -1,0 +1,9 @@
+.book-item:hover {
+    transform: none;
+}
+
+.btn-link {
+    position: relative;
+    top: -5px;
+    font-size: 1.2em;
+}
