@@ -41,6 +41,10 @@ header {
     background: var(--primary);
 }
 
+header input[type="search"], header input[type="search"]:focus {
+    background-color: #d9d9d9;
+}
+
 .top-nav {
     padding: 8px 0;
 }
@@ -48,7 +52,7 @@ header {
 .banner {
     background-position: center;
     background-size: cover;
-    height: 40vh;
+    height: 33vh;
     min-height: 240px;
     margin-bottom: 20px;
 }
