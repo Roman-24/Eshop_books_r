@@ -26,7 +26,7 @@
             </a>
             <div class="col-6">
                 <div class="input-group">
-                    <input type="search" class="form-control" placeholder="Vyhľadať poďla názvu knihy, autora alebo žánru" aria-label="Search"
+                    <input type="search" class="form-control" placeholder="Search" aria-label="Search"
                            aria-describedby="search-addon"/>
                     <span class="input-group-text border-0" id="search-addon">
                         <i class="fas fa-search"></i>
@@ -34,9 +34,9 @@
                 </div>
             </div>
             <div class="col-3 buttons">
-                <button data-bs-toggle="modal" data-bs-target="#login" class="btn btn-primary">Prihlásiť</button>
-                <button data-bs-toggle="modal" data-bs-target="#register" class="btn btn-secondary">Registrovať</button>
-                <a class="btn btn-secondary" href="shopping-cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <button class="btn btn-primary">Prihlásiť</button>
+                <button class="btn btn-secondary">Registrovať</button>
+                <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></button>
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
                 <ul>
                     <!-- TODO dať tu iba li alebo ako rozlíšiť meno kateogrie/subk pre citacky or podobne-->
                     <li class="category">Kategoria</li>
-                    <li class="sub-category"><a href="products-admin.html">Pod kategooria</a></li>
+                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
                     <li class="sub-category"><a href="#">Pod kategooria</a></li>
                     <li class="category">Kategoria</li>
                     <li class="sub-category"><a href="#">Pod kategooria</a></li>
@@ -66,80 +66,27 @@
                     <li class="sub-category"><a href="#">Pod kategooria</a></li>
                     <li class="sub-category"><a href="#">Pod kategooria</a></li>
                 </ul>
-                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#advanced-search">Pokročilé hľadanie</button>
+                <a href="search.html" class="btn btn-secondary">Pokročilé hľadanie</a>
             </nav>
         </aside>
         <main class="col-9">
             <div class="block">
-                <h2>Odporúčané knihy pre vás</h2>
-                <a href="book.html" class="book-item">
-                    <div class="row m-0">
-                        <div class="image col-2" style="background-image: url(assets/book-cover.jpg)"></div>
-                        <div class="item-details col-10">
-                            <cite class="book-title">Zimné rozprávky</cite>
-                            <div class="book-info">Jan Jánek,
-                                <time datetime="2015-06-21" title="Jun 21 2015">21.6.2015</time>
-                            </div>
-                            <p class="book-description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab adipisci commodi distinctio dolore eligendi ex fugiat, illum iste
-                                itaque laudantium magni molestiae molestias odio quae sed, veritatis. Accusamus, doloribus!
-                            </p>
-                            <div class="book-price">99,99€</div>
-                        </div>
+                <div class="row m-0 category-selected">
+                    <div class="col-3 ">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new-book">Pridať knihu do kategórie</button>
                     </div>
-                </a>
+                    <div class="col-6">
+                        <h2 class="mt-n5">Knihy z kategórie: xxx</h2>
+                    </div>
+                    <div class="col-3 ">
+                        <select class="form-select sort-selection" aria-label="Default select example">
+                            <option value="1">Cena vzostupne</option>
+                            <option value="2">Cena zostupne</option>
+                            <option value="3">Abecedne</option>
+                        </select>
+                    </div>
+                </div>
                 <a href="#" class="book-item">
-                    <div class="row m-0">
-                        <div class="image col-2" style="background-image: url(assets/book-cover.jpg)"></div>
-                        <div class="item-details col-10">
-                            <cite class="book-title">Zimné rozprávky</cite>
-                            <div class="book-info">Jan Jánek,
-                                <time datetime="2015-06-21" title="Jun 21 2015">21.6.2015</time>
-                            </div>
-                            <p class="book-description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab adipisci commodi distinctio dolore eligendi ex fugiat, illum iste
-                                itaque laudantium magni molestiae molestias odio quae sed, veritatis. Accusamus, doloribus!
-                            </p>
-                            <div class="book-price">99,99€</div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="book-item">
-                    <div class="row m-0">
-                        <div class="image col-2" style="background-image: url(assets/book-cover.jpg)"></div>
-                        <div class="item-details col-10">
-                            <cite class="book-title">Zimné rozprávky</cite>
-                            <div class="book-info">Jan Jánek,
-                                <time datetime="2015-06-21" title="Jun 21 2015">21.6.2015</time>
-                            </div>
-                            <p class="book-description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab adipisci commodi distinctio dolore eligendi ex fugiat, illum iste
-                                itaque laudantium magni molestiae molestias odio quae sed, veritatis. Accusamus, doloribus!
-                            </p>
-                            <div class="book-price">99,99€</div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="book-item">
-                    <div class="row m-0">
-                        <div class="image col-2" style="background-image: url(assets/book-cover.jpg)"></div>
-                        <div class="item-details col-10">
-                            <cite class="book-title">Zimné rozprávky</cite>
-                            <div class="book-info">Jan Jánek,
-                                <time datetime="2015-06-21" title="Jun 21 2015">21.6.2015</time>
-                            </div>
-                            <p class="book-description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab adipisci commodi distinctio dolore eligendi ex fugiat, illum iste
-                                itaque laudantium magni molestiae molestias odio quae sed, veritatis. Accusamus, doloribus!
-                            </p>
-                            <div class="book-price">99,99€</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="block">
-                <h2>Nové knihy u nás</h2>
-                <a href="book.html" class="book-item">
                     <div class="row m-0">
                         <div class="image col-2" style="background-image: url(assets/book-cover.jpg)"></div>
                         <div class="item-details col-10">
@@ -203,6 +150,20 @@
                         </div>
                     </div>
                 </a>
+
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </main>
     </div>
@@ -233,83 +194,35 @@
         </div>
     </div>
 </footer>
-
-
-<!-- MODALS -->
-<!-- ADVANCED SEARCH -->
-<div class="modal fade" id="advanced-search" aria-hidden="true">
+<div class="modal fade" id="new-book" aria-hidden="true">
     <div class="modal-dialog">
         <form class="modal-content" action="#">
             <div class="modal-header">
-                <h5 class="modal-title">Vyhľadávanie</h5>
+                <h5 class="modal-title">Pridať novú knihu</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <label for="name">Názov knihy</label>
-                <input class="form-control" id="name" placeholder="Názov knihy" type="text"/>
+                <label for="new-book-name">Názov</label>
+                <input class="form-control" id="new-book-name" placeholder="Meno knihy" type="text"/>
 
-                <label for="autor">Autor</label>
-                <input class="form-control" id="autor" placeholder="Autor" type="text"/>
+                <label for="new-book-author">Autor</label>
+                <input class="form-control" id="new-book-author" placeholder="Autor" type="text"/>
 
-                <label for="year">Rok vydania</label>
-                <input class="form-control" id="year" placeholder="Rok vydania" type="text"/>
+                <label for="new-book-date">Dátum vydania</label>
+                <input class="form-control" id="new-book-date" placeholder="Dátum vydania" type="date"/>
 
-                <label for="genre">Žáner</label>
-                <input class="form-control" id="genre" placeholder="Žáner" type="text"/>
+                <label for="new-book-price">Cena (€)</label>
+                <input class="form-control" id="new-book-price" placeholder="Cena (€)" type="number"/>
+
+                <label for="new-book-description">Popis</label>
+                <textarea class="form-control" id="new-book-description" placeholder="Popis" type="text"></textarea>
             </div>
             <div class="modal-footer">
-                <input type="submit" class="btn btn-primary" value="Vyhľadať"/>
+                <input type="submit" class="btn btn-primary" value="Pridať knihu"/>
             </div>
         </form>
     </div>
 </div>
-
-<div class="modal fade" id="login" aria-hidden="true">
-    <div class="modal-dialog">
-        <form class="modal-content" action="#">
-            <div class="modal-header">
-                <h5 class="modal-title">Prihlásenie</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <label for="login-name">Prihlásovacia adresa</label>
-                <input class="form-control" id="login-name" placeholder="Emailová adresa" type="email"/>
-
-                <label for="login-password">Prihlásovaie heslo</label>
-                <input class="form-control" id="login-password" placeholder="Password" type="password"/>
-                <a href="#" class="form-small-link">Zabudli ste heslo?</a>
-            </div>
-            <div class="modal-footer">
-                <input type="submit" class="btn btn-primary" value="Prihlásiť"/>
-            </div>
-        </form>
-    </div>
-</div>
-
-<div class="modal fade" id="register" aria-hidden="true">
-    <div class="modal-dialog">
-        <form class="modal-content" action="#">
-            <div class="modal-header">
-                <h5 class="modal-title">Registrácia</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <label for="register-name">Prihlásovacia adresa</label>
-                <input class="form-control" id="register-name" placeholder="Emailová adresa" type="email"/>
-
-                <label for="register-password">Heslo</label>
-                <input class="form-control" id="register-password" placeholder="Heslo" type="password"/>
-
-                <label for="register-password-repeat">Opakovať heslo</label>
-                <input class="form-control" id="register-password-repeat" placeholder="Opakované heslo" type="password"/>
-            </div>
-            <div class="modal-footer">
-                <input type="submit" class="btn btn-primary" value="Prihlásiť"/>
-            </div>
-        </form>
-    </div>
-</div>
-
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
