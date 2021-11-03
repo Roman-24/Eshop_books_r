@@ -214,10 +214,23 @@ form input {
     max-width: 50%;
 }
 
+.form-small-link {
+    text-align: right;
+    display: block;
+    text-decoration: underline;
+    color: #9b9b9b;
+    font-size: .8em;
+}
+
 /* MODAL */
 .modal-header {
-    border-bottom: none;
+    border: none;
     padding-bottom: 0;
+}
+
+.modal-footer{
+    border: none;
+    padding-top: 0;
 }
 
 /* FORM END */
