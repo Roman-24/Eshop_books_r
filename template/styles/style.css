@@ -2,6 +2,7 @@
     --primary: #222;
     --text-color: #000;
     --block-backgroud: #e5e5e5;
+    --link-color: #000;
 }
 
 .btn-primary {
@@ -15,6 +16,11 @@
 
 .btn {
     border: none;
+}
+
+.page-link {
+    color: var(--link-color);
+    text-decoration: underline;
 }
 
 header {
@@ -228,9 +234,18 @@ form input {
     padding-bottom: 0;
 }
 
-.modal-footer{
+.modal-footer {
     border: none;
     padding-top: 0;
+}
+
+/* PAGINATION */
+.pagination .page-link {
+    text-decoration: none;
+}
+
+.pagination .page-link:hover {
+    color: var(--link-color);
 }
 
 /* FORM END */
