@@ -84,12 +84,6 @@ header input[type="search"], header input[type="search"]:focus {
     }
 }
 
-nav {
-    padding: 25px 35px;
-    background: var(--block-backgroud);
-    margin-right: 10px;
-}
-
 aside {
     position: sticky;
 }
@@ -116,6 +110,57 @@ aside nav a {
 aside nav a:hover {
     font-weight: bold;
     color: var(--text-color);
+}
+
+nav {
+    padding: 25px 35px;
+    background: var(--block-backgroud);
+    margin-right: 10px;
+}
+
+.navbar-title {
+    display: inline-block;
+    margin: 0;
+}
+
+@media only screen and (min-width: 992px) {
+    nav .navbar-title, .desktop-hide {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .mobile-hide {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    aside nav {
+        margin-bottom: 25px;
+        padding: 15px 15px;
+    }
+
+    aside nav .btn {
+        float: right;
+        width: initial;
+        margin: 0;
+    }
+
+    .navbar-collapse {
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    nav .navbar-title {
+        display: none;
+    }
+
+    nav .btn {
+        position: relative;
+        top: -2px;
+    }
 }
 
 .block {
