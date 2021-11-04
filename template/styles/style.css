@@ -77,6 +77,13 @@ header input[type="search"], header input[type="search"]:focus {
     margin-bottom: 20px;
 }
 
+@media only screen and (max-width: 768px) {
+    .banner {
+        height: 17vh;
+        min-height: initial;
+    }
+}
+
 nav {
     padding: 25px 35px;
     background: var(--block-backgroud);
