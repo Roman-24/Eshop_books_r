@@ -49,6 +49,22 @@ header input[type="search"], header input[type="search"]:focus {
     background-color: #d9d9d9;
 }
 
+.logo img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .logo {
+        display: none;
+    }
+
+    .top-nav .buttons {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+
 .top-nav {
     padding: 8px 0;
 }
