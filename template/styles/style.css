@@ -304,10 +304,17 @@ footer .footer-nav {
 footer .footer-nav li {
     margin-right: 15px;
     padding-right: 15px;
+    display: block;
 }
 
-footer .footer-nav li:not(:last-child) {
-    border-right: 1px solid #d2d2d2;
+@media only screen and (min-width: 992px) {
+    footer .footer-nav li{
+        display: inline-block;
+    }
+
+    footer .footer-nav li:not(:last-child) {
+        border-right: 1px solid #d2d2d2;
+    }
 }
 
 footer .footer-socials li {
@@ -317,6 +324,11 @@ footer .footer-socials li {
 
 footer .footer-socials li:hover a {
     color: #8f8f8f
+}
+
+.copyright {
+    margin-top: 30px;
+    color: #8f8f8f;
 }
 
 /* FORMS */
