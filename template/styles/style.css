@@ -139,6 +139,7 @@ nav {
     aside nav {
         margin-bottom: 25px;
         padding: 15px 15px;
+        margin-right: 0;
     }
 
     aside nav .btn {
@@ -183,6 +184,37 @@ nav {
     color: var(--text-color);
     text-decoration: none;
     display: block;
+}
+
+@media only screen and (max-width: 992px) {
+    .books-list .book-item {
+        font-size: .9em;
+        text-align: center;
+        margin-bottom: 20px;
+        width: 49%;
+        display: inline-block;
+    }
+
+    /* ano toto by sa dalo robit lepsie, ale musel by sa menit kazdy jeden element.. Ked bude stranka dynamicka, tak to zoptimalizujeme*/
+    .books-list .book-item .image {
+        width: 80%;
+        margin-left: 10%;
+        height: 190px;
+    }
+
+    .books-list .item-details {
+        width: 100%;
+    }
+
+    .books-list .book-item .book-description {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .books-list .book-item {
+        width: 100%;
+    }
 }
 
 .book-item:hover {
