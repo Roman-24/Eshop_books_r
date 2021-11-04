@@ -53,6 +53,10 @@ header input[type="search"], header input[type="search"]:focus {
     width: 100%;
 }
 
+.home-btn {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
     .logo {
         display: none;
@@ -61,6 +65,10 @@ header input[type="search"], header input[type="search"]:focus {
     .top-nav .buttons {
         text-align: center;
         margin-top: 10px;
+    }
+
+    .home-btn {
+        display: inline-block;
     }
 }
 
@@ -308,7 +316,7 @@ footer .footer-nav li {
 }
 
 @media only screen and (min-width: 992px) {
-    footer .footer-nav li{
+    footer .footer-nav li {
         display: inline-block;
     }
 
