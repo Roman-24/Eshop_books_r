@@ -21,23 +21,23 @@
 <body>
 <header>
     <div class="container top-nav">
-        <div class="row align-items-center">
-            <a href="index.html" class="col-3">
+        <div class="row m-0 align-items-center">
+            <a href="index.html" class="col-3 logo">
                 <img src="assets/logo.png" alt="Logo">
             </a>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="input-group">
-                    <input type="search" class="form-control" placeholder="Search" aria-label="Search"
+                    <input type="search" class="form-control" placeholder="Vyhľadať poďla názvu knihy, autora alebo žánru" aria-label="Search"
                            aria-describedby="search-addon"/>
                     <span class="input-group-text border-0" id="search-addon">
                         <i class="fas fa-search"></i>
                     </span>
                 </div>
             </div>
-            <div class="col-3 buttons">
-                <button class="btn btn-primary">Prihlásiť</button>
-                <button class="btn btn-secondary">Registrovať</button>
-                <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></button>
+            <div class="col-12 col-md-3 buttons">
+                <button data-bs-toggle="modal" data-bs-target="#login" class="btn btn-secondary">Prihlásiť</button>
+                <button data-bs-toggle="modal" data-bs-target="#register" class="btn btn-secondary">Registrovať</button>
+                <a class="btn btn-secondary" href="shopping-cart.html"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
     </div>
@@ -45,36 +45,42 @@
 </header>
 <div class="container">
     <div class="row">
-        <!-- TODO je vhodne pouzitie asidu?-->
-        <aside class="col-3">
-            <nav>
-                <ul>
-                    <!-- TODO dať tu iba li alebo ako rozlíšiť meno kateogrie/subk pre citacky or podobne-->
-                    <li class="category">Kategoria</li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="category">Kategoria</li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="category">Kategoria</li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="category">Kategoria</li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                </ul>
-                <a href="search.html" class="btn btn-secondary">Pokročilé hľadanie</a>
+        <aside class="col-12 col-lg-3">
+            <nav class="navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#asideNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h3 class="navbar-title">Kategórie</h3>
+                <button class="btn btn-secondary desktop-hide" data-bs-toggle="modal" data-bs-target="#advanced-search">Pokročilé hľadanie</button>
+                <div class="collapse navbar-collapse" id="asideNav">
+                    <ul>
+                        <li class="category">Kategoria</li>
+                        <li class="sub-category"><a href="products.html">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="category">Kategoria</li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="category">Kategoria</li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="category">Kategoria</li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-secondary mobile-hide" data-bs-toggle="modal" data-bs-target="#advanced-search">Pokročilé hľadanie</button>
             </nav>
         </aside>
         <main class="col-12 col-lg-9">
             <div class="block book-item preview-book">
                 <div class="row m-0">
-                    <div class="image col-4" style="background-image: url(assets/book-cover.jpg)"></div>
-                    <div class="item-details col-8">
+                    <div class="image col-12 col-md-4" style="background-image: url(assets/book-cover.jpg)"></div>
+                    <div class="item-details col-12 col-md-8">
                         <cite class="book-title">Zimné rozprávky</cite>
                         <div class="book-info">Jan Jánek,
                             <time datetime="2015-06-21" title="Jun 21 2015">21.6.2015</time>
