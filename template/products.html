@@ -207,6 +207,82 @@
     </div>
 </footer>
 
+
+<!-- MODALS -->
+<!-- ADVANCED SEARCH -->
+<div class="modal fade" id="advanced-search" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content" action="#">
+            <div class="modal-header">
+                <h5 class="modal-title">Vyhľadávanie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="name">Názov knihy</label>
+                <input class="form-control" id="name" placeholder="Názov knihy" type="text"/>
+
+                <label for="autor">Autor</label>
+                <input class="form-control" id="autor" placeholder="Autor" type="text"/>
+
+                <label for="year">Rok vydania</label>
+                <input class="form-control" id="year" placeholder="Rok vydania" type="text"/>
+
+                <label for="genre">Žáner</label>
+                <input class="form-control" id="genre" placeholder="Žáner" type="text"/>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" onclick="window.location.href='products.html';" value="Vyhľadať"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="login" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content" action="#">
+            <div class="modal-header">
+                <h5 class="modal-title">Prihlásenie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="login-name">Prihlásovacia adresa</label>
+                <input class="form-control" id="login-name" placeholder="Emailová adresa" type="email"/>
+
+                <label for="login-password">Prihlásovaie heslo</label>
+                <input class="form-control" id="login-password" placeholder="Password" type="password"/>
+                <a href="#" class="form-small-link">Zabudli ste heslo?</a>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="Prihlásiť"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="register" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content" action="#">
+            <div class="modal-header">
+                <h5 class="modal-title">Registrácia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="register-name">Prihlásovacia adresa</label>
+                <input class="form-control" id="register-name" placeholder="Emailová adresa" type="email"/>
+
+                <label for="register-password">Heslo</label>
+                <input class="form-control" id="register-password" placeholder="Heslo" type="password"/>
+
+                <label for="register-password-repeat">Opakovať heslo</label>
+                <input class="form-control" id="register-password-repeat" placeholder="Opakované heslo" type="password"/>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="Registrovať"/>
+            </div>
+        </form>
+    </div>
+</div>
+
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
