@@ -49,6 +49,30 @@ header input[type="search"], header input[type="search"]:focus {
     background-color: #d9d9d9;
 }
 
+.logo img {
+    width: 100%;
+}
+
+.home-btn {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .logo {
+        display: none;
+    }
+
+    .top-nav .buttons {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .home-btn {
+        display: inline-block;
+    }
+}
+
+
 .top-nav {
     padding: 8px 0;
 }
@@ -61,10 +85,11 @@ header input[type="search"], header input[type="search"]:focus {
     margin-bottom: 20px;
 }
 
-nav {
-    padding: 25px 35px;
-    background: var(--block-backgroud);
-    margin-right: 10px;
+@media only screen and (max-width: 768px) {
+    .banner {
+        height: 17vh;
+        min-height: initial;
+    }
 }
 
 aside {
@@ -95,6 +120,58 @@ aside nav a:hover {
     color: var(--text-color);
 }
 
+nav {
+    padding: 25px 35px;
+    background: var(--block-backgroud);
+    margin-right: 10px;
+}
+
+.navbar-title {
+    display: inline-block;
+    margin: 0;
+}
+
+@media only screen and (min-width: 992px) {
+    nav .navbar-title, .desktop-hide {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .mobile-hide {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    aside nav {
+        margin-bottom: 25px;
+        padding: 15px 15px;
+        margin-right: 0;
+    }
+
+    aside nav .btn {
+        float: right;
+        width: initial;
+        margin: 0;
+    }
+
+    .navbar-collapse {
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    nav .navbar-title {
+        display: none;
+    }
+
+    nav .btn {
+        position: relative;
+        top: -2px;
+    }
+}
+
 .block {
     background: var(--block-backgroud);
     margin-bottom: 25px;
@@ -115,6 +192,37 @@ aside nav a:hover {
     color: var(--text-color);
     text-decoration: none;
     display: block;
+}
+
+@media only screen and (max-width: 992px) {
+    .books-list .book-item {
+        font-size: .9em;
+        text-align: center;
+        margin-bottom: 20px;
+        width: 49%;
+        display: inline-block;
+    }
+
+    /* ano toto by sa dalo robit lepsie, ale musel by sa menit kazdy jeden element.. Ked bude stranka dynamicka, tak to zoptimalizujeme*/
+    .books-list .book-item .image {
+        width: 80%;
+        margin-left: 10%;
+        height: 190px;
+    }
+
+    .books-list .item-details {
+        width: 100%;
+    }
+
+    .books-list .book-item .book-description {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .books-list .book-item {
+        width: 100%;
+    }
 }
 
 .book-item:hover {
@@ -204,10 +312,17 @@ footer .footer-nav {
 footer .footer-nav li {
     margin-right: 15px;
     padding-right: 15px;
+    display: block;
 }
 
-footer .footer-nav li:not(:last-child) {
-    border-right: 1px solid #d2d2d2;
+@media only screen and (min-width: 992px) {
+    footer .footer-nav li {
+        display: inline-block;
+    }
+
+    footer .footer-nav li:not(:last-child) {
+        border-right: 1px solid #d2d2d2;
+    }
 }
 
 footer .footer-socials li {
@@ -219,10 +334,16 @@ footer .footer-socials li:hover a {
     color: #8f8f8f
 }
 
+.copyright {
+    margin-top: 30px;
+    color: #8f8f8f;
+}
+
 /* FORMS */
 form {
     display: inline-block;
     width: 450px;
+    max-width: 100%;
     text-align: left;
     font-size: 1.2em;
 }
