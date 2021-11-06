@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Required meta tags -->
-    <title>Domovská stránka</title>
+    <title>Výber produktov</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,11 +20,11 @@
 <body>
 <header>
     <div class="container top-nav">
-        <div class="row align-items-center">
-            <a href="index.html" class="col-3">
+        <div class="row m-0 align-items-center">
+            <a href="index.html" class="col-3 logo">
                 <img src="assets/logo.png" alt="Logo">
             </a>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="input-group">
                     <input type="search" class="form-control" placeholder="Search" aria-label="Search"
                            aria-describedby="search-addon"/>
@@ -33,10 +33,11 @@
                     </span>
                 </div>
             </div>
-            <div class="col-3 buttons">
-                <button class="btn btn-primary">Prihlásiť</button>
-                <button class="btn btn-secondary">Registrovať</button>
-                <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></button>
+            <div class="col-12 col-md-3 buttons">
+                <a class="btn btn-secondary home-btn" href="index.html"><i class="fas fa-home"></i></a>
+                <button data-bs-toggle="modal" data-bs-target="#login" class="btn btn-secondary">Prihlásiť</button>
+                <button data-bs-toggle="modal" data-bs-target="#register" class="btn btn-secondary">Registrovať</button>
+                <a class="btn btn-secondary" href="shopping-cart.html"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
     </div>
@@ -45,28 +46,36 @@
 <div class="container">
     <div class="row">
         <!-- TODO je vhodne pouzitie asidu?-->
-        <aside class="col-3">
-            <nav>
-                <ul>
-                    <!-- TODO dať tu iba li alebo ako rozlíšiť meno kateogrie/subk pre citacky or podobne-->
-                    <li class="category">Kategoria</li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="category">Kategoria</li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="category">Kategoria</li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="category">Kategoria</li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                    <li class="sub-category"><a href="#">Pod kategooria</a></li>
-                </ul>
-                <a href="search.html" class="btn btn-secondary">Pokročilé hľadanie</a>
+        <aside class="col-12 col-lg-3">
+            <nav class="navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#asideNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h3 class="navbar-title">Kategórie</h3>
+                <button class="btn btn-secondary desktop-hide" data-bs-toggle="modal" data-bs-target="#advanced-search">Pokročilé hľadanie</button>
+                <div class="collapse navbar-collapse" id="asideNav">
+                    <ul>
+                        <!-- TODO dať tu iba li alebo ako asideNav meno kateogrie/subk pre citacky or podobne-->
+                        <li class="category">Kategoria</li>
+                        <li class="sub-category"><a href="products.html">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="category">Kategoria</li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="category">Kategoria</li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="category">Kategoria</li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                        <li class="sub-category"><a href="#">Pod kategooria</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-secondary mobile-hide" data-bs-toggle="modal" data-bs-target="#advanced-search">Pokročilé hľadanie</button>
             </nav>
         </aside>
         <main class="col-12 col-lg-9">
@@ -174,7 +183,7 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <ul class="footer-nav">
                     <li><a href="#">Kontakt</a></li>
                     <li><a href="#">Obchodné podmienky</a></li>
@@ -185,9 +194,8 @@
                     <li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
                     <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
                 </ul>
-                <p><small>Copyright (&copy;) 2021 FX.book</small></p>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <h4 class="footer-title">Kto sme?</h4>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci asperiores, consequuntur dicta ducimus laudantium modi
@@ -195,8 +203,85 @@
                 </p>
             </div>
         </div>
+        <p class="text-center copyright"><small>Copyright (&copy;) 2021 FX.book</small></p>
     </div>
 </footer>
+
+
+<!-- MODALS -->
+<!-- ADVANCED SEARCH -->
+<div class="modal fade" id="advanced-search" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content" action="#">
+            <div class="modal-header">
+                <h5 class="modal-title">Vyhľadávanie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="name">Názov knihy</label>
+                <input class="form-control" id="name" placeholder="Názov knihy" type="text"/>
+
+                <label for="autor">Autor</label>
+                <input class="form-control" id="autor" placeholder="Autor" type="text"/>
+
+                <label for="year">Rok vydania</label>
+                <input class="form-control" id="year" placeholder="Rok vydania" type="text"/>
+
+                <label for="genre">Žáner</label>
+                <input class="form-control" id="genre" placeholder="Žáner" type="text"/>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" onclick="window.location.href='products.html';" value="Vyhľadať"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="login" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content" action="#">
+            <div class="modal-header">
+                <h5 class="modal-title">Prihlásenie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="login-name">Prihlásovacia adresa</label>
+                <input class="form-control" id="login-name" placeholder="Emailová adresa" type="email"/>
+
+                <label for="login-password">Prihlásovaie heslo</label>
+                <input class="form-control" id="login-password" placeholder="Password" type="password"/>
+                <a href="#" class="form-small-link">Zabudli ste heslo?</a>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="Prihlásiť"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="register" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content" action="#">
+            <div class="modal-header">
+                <h5 class="modal-title">Registrácia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="register-name">Prihlásovacia adresa</label>
+                <input class="form-control" id="register-name" placeholder="Emailová adresa" type="email"/>
+
+                <label for="register-password">Heslo</label>
+                <input class="form-control" id="register-password" placeholder="Heslo" type="password"/>
+
+                <label for="register-password-repeat">Opakovať heslo</label>
+                <input class="form-control" id="register-password-repeat" placeholder="Opakované heslo" type="password"/>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="Registrovať"/>
+            </div>
+        </form>
+    </div>
+</div>
 
 <!-- Optional JavaScript; choose one of the two! -->
 

@@ -22,11 +22,11 @@
 <body>
 <header>
     <div class="container top-nav">
-        <div class="row align-items-center">
-            <a href="index.html" class="col-3">
+        <div class="row m-0 align-items-center">
+            <a href="index.html" class="col-3 logo">
                 <img src="assets/logo.png" alt="Logo">
             </a>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="input-group">
                     <input type="search" class="form-control" placeholder="Search" aria-label="Search"
                            aria-describedby="search-addon"/>
@@ -35,10 +35,11 @@
                     </span>
                 </div>
             </div>
-            <div class="col-3 buttons">
-                <button class="btn btn-primary">Prihlásiť</button>
-                <button class="btn btn-secondary">Registrovať</button>
-                <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></button>
+            <div class="col-12 col-md-3 buttons">
+                <a class="btn btn-secondary home-btn" href="index.html"><i class="fas fa-home"></i></a>
+                <button data-bs-toggle="modal" data-bs-target="#login" class="btn btn-secondary">Prihlásiť</button>
+                <button data-bs-toggle="modal" data-bs-target="#register" class="btn btn-secondary">Registrovať</button>
+                <a class="btn btn-secondary" href="shopping-cart.html"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
     </div>
@@ -52,8 +53,8 @@
                 <div class="basket-list">
                     <a href="#" class="book-item">
                         <div class="row m-0">
-                            <div class="image col-2" style="background-image: url(assets/book-cover.jpg)"></div>
-                            <div class="item-details col-8">
+                            <div class="image col-4 col-lg-2" style="background-image: url(assets/book-cover.jpg)"></div>
+                            <div class="item-details col-8 col-lg-8">
                                 <cite class="book-title">Zimné rozprávky</cite>
                                 <div class="book-info">Jan Jánek,
                                     <time datetime="2015-06-21" title="Jun 21 2015">21.6.2015</time>
@@ -66,7 +67,7 @@
                                 </p>
                                 <div class="book-price">99,99€</div>
                             </div>
-                            <div class="col-2 align-self-center">
+                            <div class="col-0 align-self-center col-lg-2">
                                 <div class="d-flex text-center quantity-selection ">
                                     <button class="btn btn-link px-2"
                                             onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
@@ -96,7 +97,7 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <ul class="footer-nav">
                     <li><a href="#">Kontakt</a></li>
                     <li><a href="#">Obchodné podmienky</a></li>
@@ -107,18 +108,16 @@
                     <li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
                     <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
                 </ul>
-                <p><small>Copyright (&copy;) 2021 FX.book</small></p>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <h4 class="footer-title">Kto sme?</h4>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci asperiores, consequuntur dicta
-                    ducimus laudantium modi
-                    neque provident quia quos repudiandae sed soluta tenetur. Delectus doloremque libero necessitatibus
-                    quisquam quos!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci asperiores, consequuntur dicta ducimus laudantium modi
+                    neque provident quia quos repudiandae sed soluta tenetur. Delectus doloremque libero necessitatibus quisquam quos!
                 </p>
             </div>
         </div>
+        <p class="text-center copyright"><small>Copyright (&copy;) 2021 FX.book</small></p>
     </div>
 </footer>
 
