@@ -9,7 +9,7 @@
 
 <div class="container">
     <div class="row">
-        @include('layout.partials.aside_nav')
+        @include('layout.partials.aside-nav')
         <main class="col-12 col-lg-9">
             @yield('content')
         </main>
