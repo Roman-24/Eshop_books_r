@@ -49,7 +49,17 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $books = Book::where('category', $id)->get();
+        $sort = $_GET["sort"] ?? null;
+        if ($sort) {
+//            $books = Book::where('category', $id)->get();
+            $books = Book::where('category', $id)->get();
+            if (substr($sort, 0, strlen($sort)) === "desc")
+                $books = $books->sortByDesc(substr($sort, 4));
+            else
+                $books = $books->sortBy($sort);
+        } else
+            $books = Book::where('category', $id)->get();
+
         $category = Category::find($id);
 
         return view('layout.pages.products')->with("category", $category)->with("books", $books)->with("categories", Category::all());

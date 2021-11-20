@@ -9,17 +9,11 @@ use App\Models\Category;
 
 class BookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
-     */
     public function index()
     {
         $books = Book::all();
         return view('layout.pages.products', compact('books', $books));
     }
-
 
     /**
      * Show the form for creating a new resource.
