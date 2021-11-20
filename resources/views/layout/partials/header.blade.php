@@ -1,7 +1,7 @@
 <header>
     <div class="container top-nav">
         <div class="row m-0 align-items-center">
-            <a href="index.html" class="col-3 logo">
+            <a href="{{ url('') }}" class="col-3 logo">
                 <img src="{{ asset('assets/logo.svg') }}" alt="Logo" width="70px" height="70px">
             </a>
             <div class="col-12 col-md-6">
@@ -14,10 +14,10 @@
                 </div>
             </div>
             <div class="col-12 col-md-3 buttons">
-                <a class="btn btn-secondary home-btn" href="index.html"><i class="fas fa-home"></i></a>
+                <a class="btn btn-secondary home-btn" href="{{ url('') }}"><i class="fas fa-home"></i></a>
                 <button data-bs-toggle="modal" data-bs-target="#login" class="btn btn-secondary">Prihlásiť</button>
                 <button data-bs-toggle="modal" data-bs-target="#register" class="btn btn-secondary">Registrovať</button>
-                <a class="btn btn-secondary" href="shopping-cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a class="btn btn-secondary" href="shopping-cart"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
     </div>

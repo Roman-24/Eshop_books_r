@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('layout.pages.homepage');
 });
 
+Route::get('shopping-cart', function () {
+    return view('layout.pages.shopping-cart');
+});
+
 Route::resource('book', BookController::class);
 
 Route::resource('category', CategoryController::class);

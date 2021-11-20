@@ -20,5 +20,11 @@
 <footer>
     @include('layout.partials.footer');
 </footer>
+
+<!-- MODALS -->
+@include('layout.modals.login')
+@include('layout.modals.register')
+@include('layout.modals.advance_search')
+
 </body>
 </html>
