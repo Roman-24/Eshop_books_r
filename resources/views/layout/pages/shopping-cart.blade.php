@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('title', "Nákupný košík")
 @section('content')
 <div class="block">
     <h2>Obsah nákupného košíka</h2>

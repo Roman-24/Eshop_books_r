@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('title', "Objednávka")
 @section('content')
     <div class="block text-center">
         <h2>Doprava a platba</h2>

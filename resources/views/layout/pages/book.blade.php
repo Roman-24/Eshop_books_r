@@ -1,4 +1,7 @@
 @extends('layout.app')
+
+@section('title', $book->tittle)
+
 @section('content')
     <div class="block book-item preview-book">
         <div class="row m-0">
