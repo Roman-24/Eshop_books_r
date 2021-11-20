@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout.pages.homepage');
+    return view('layout.pages.homepage')->with("categories", Category::all());
 });
 
 Route::get('shopping-cart', function () {
-    return view('layout.pages.shopping-cart');
+    return view('layout.pages.shopping-cart')->with("categories", Category::all());
 });
 
 Route::resource('book', BookController::class);

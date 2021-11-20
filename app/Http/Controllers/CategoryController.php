@@ -16,7 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return view('layout.partials.aside-nav', compact('categories', $categories));
     }
 
     /**
@@ -51,7 +52,7 @@ class CategoryController extends Controller
         $books = Book::where('category', $id)->get();
         $category = Category::find($id);
 
-        return view('layout.pages.products')->with("category", $category)->with("books", $books);
+        return view('layout.pages.products')->with("category", $category)->with("books", $books)->with("categories", Category::all());
     }
 
     /**
