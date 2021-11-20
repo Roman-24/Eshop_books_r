@@ -15,3 +15,6 @@
 
 <!-- OWN CSS   -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href="{{ asset('css/book.css') }}" rel="stylesheet">
+<link href="{{ asset('css/admin-book.css') }}" rel="stylesheet">
+<link href="{{ asset('css/shopping-cart.css') }}" rel="stylesheet">

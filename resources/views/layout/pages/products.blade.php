@@ -17,7 +17,7 @@
         <div class="books-list">
             <a href="#" class="book-item">
                 <div class="row m-0">
-                    <div class="image col-2" style="background-image: url(assets/book-cover.jpg)"></div>
+                    <div class="image col-2" style="background-image: url(public/assets/book-cover.jpg)"></div>
                     <div class="item-details col-10">
                         <cite class="book-title">Zimné rozprávky</cite>
                         <div class="book-info">Jan Jánek,
