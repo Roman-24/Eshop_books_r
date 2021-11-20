@@ -11,10 +11,11 @@
                 <h2>Knihy z kategórie {{$category->name}}</h2>
             </div>
             <div class="col-3 ">
-                <select class="form-select sort-selection" aria-label="Default select example">
-                    <option value="1">Cena vzostupne</option>
-                    <option value="2">Cena zostupne</option>
-                    <option value="3">Abecedne</option>
+                <select class="form-select sort-selection" aria-label="Default select example" id="sorter">
+                    <option value="">Zoradiť výsledky</option>
+                    <option value="descprice">Cena vzostupne</option>
+                    <option value="price">Cena zostupne</option>
+                    <option value="name">Abecedne</option>
                 </select>
             </div>
         </div>
