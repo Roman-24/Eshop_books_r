@@ -27,3 +27,9 @@ Route::get('shopping-cart', function () {
 Route::resource('book', BookController::class);
 
 Route::resource('category', CategoryController::class);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
