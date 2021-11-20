@@ -2,7 +2,7 @@
     <div class="container top-nav">
         <div class="row m-0 align-items-center">
             <a href="index.html" class="col-3 logo">
-                <img src="assets/logo.svg" alt="Logo" width="70px" height="70px">
+                <img src="{{ asset('assets/logo.svg') }}" alt="Logo" width="70px" height="70px">
             </a>
             <div class="col-12 col-md-6">
                 <div class="input-group">
@@ -21,5 +21,5 @@
             </div>
         </div>
     </div>
-    <div class="banner" style="background-image: url(assets/banner.png)"></div>
+    <div class="banner" style="background-image: url({{ asset('assets/banner.png') }})"></div>
 </header>
