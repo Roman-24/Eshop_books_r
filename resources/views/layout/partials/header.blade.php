@@ -15,21 +15,22 @@
             </div>
             <div class="col-12 col-md-3 buttons">
                 @auth
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <a class="btn btn-secondary" href="route('logout')"
-                                           onclick="event.preventDefault();
+                    <div class="user-name"><i class="fas fa-user"></i>{{ Auth::user()->name }}</div>
+                    <!-- Authentication -->
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a class="btn btn-secondary" href="route('logout')"
+                           onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </a>
-                </form>
-                <p class="user-name">{{ Auth::user()->email }}</p>
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                    </form>
+                    <a class="btn btn-secondary" href="shopping-cart"><i class="fas fa-shopping-cart"></i></a>
                 @else
-                <a class="btn btn-secondary home-btn" href="{{ url('') }}"><i class="fas fa-home"></i></a>
-                <a class="btn btn-secondary" href="login">Prihlásiť</a>
-                <a class="btn btn-secondary" href="register">Registrovať</a>
-                <a class="btn btn-secondary" href="shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="btn btn-secondary home-btn" href="{{ url('') }}"><i class="fas fa-home"></i></a>
+                    <a class="btn btn-secondary" href="login">Prihlásiť</a>
+                    <a class="btn btn-secondary" href="register">Registrovať</a>
+                    <a class="btn btn-secondary" href="shopping-cart"><i class="fas fa-shopping-cart"></i></a>
                 @endauth
             </div>
         </div>
