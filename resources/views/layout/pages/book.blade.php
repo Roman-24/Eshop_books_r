@@ -15,7 +15,7 @@
                     {{$book->description}}
                 </p>
                 <div class="book-price">{{$book->price}}€</div>
-                <button class="btn btn-primary">Pridať do košíka</button>
+                <a class="btn btn-primary" href="{{route('book.addToCart', ['id' => $book->id])}}">Pridať do košíka</a>
             </div>
         </div>
     </div>
