@@ -18,6 +18,3 @@
 <link href="{{ asset('css/book.css') }}" rel="stylesheet">
 <link href="{{ asset('css/admin-book.css') }}" rel="stylesheet">
 <link href="{{ asset('css/shopping-cart.css') }}" rel="stylesheet">
-
-<link rel="stylesheet" href="{{asset('css/app.css') }}">
-<script src="{{ asset('js/app.js') }}" defer></script>
