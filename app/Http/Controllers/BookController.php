@@ -44,7 +44,9 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        return view('layout.pages.book', compact('book', $book))->with("categories", Category::all());
+        return view('layout.pages.book', compact('book', $book))
+            ->with("categories", Category::all())
+            ->with('similar_books', Book::where('category', $book->category)->get());
     }
 
 
