@@ -30,6 +30,23 @@ class CategoryController extends Controller
         //
     }
 
+//    public function hello()
+//    {
+//        print("hello");
+//        print("hello");
+//        print("hello");
+//        print("hello");
+//        print("hello");
+//        print("hello");
+//        print("hello");
+//        print("hello");
+//        print("hello");
+//        print("hello");
+//        print("hello");
+//        print("hello");
+//        print("hello");
+//    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -51,7 +68,6 @@ class CategoryController extends Controller
     {
         $sort = $_GET["sort"] ?? null;
         if ($sort) {
-//            $books = Book::where('category', $id)->get();
             $books = Book::where('category', $id)->get();
             if (substr($sort, 0, strlen($sort)) === "desc")
                 $books = $books->sortByDesc(substr($sort, 4));

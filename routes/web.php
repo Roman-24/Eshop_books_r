@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout.pages.homepage')->with("categories", Category::all());
+    return view('layout.pages.homepage')
+        ->with("categories", Category::all())
+        ->with("new_books", Book::all()->sortBy("created_at")->take(4));
 });
 
 Route::get('shopping-cart', function () {
@@ -32,4 +35,4 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
