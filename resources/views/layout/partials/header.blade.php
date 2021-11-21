@@ -15,8 +15,8 @@
             </div>
             <div class="col-12 col-md-3 buttons">
                 <a class="btn btn-secondary home-btn" href="{{ url('') }}"><i class="fas fa-home"></i></a>
-                <button data-bs-toggle="modal" data-bs-target="#login" class="btn btn-secondary">Prihlásiť</button>
-                <button data-bs-toggle="modal" data-bs-target="#register" class="btn btn-secondary">Registrovať</button>
+                <a class="btn btn-secondary" href="login">Prihlásiť</a>
+                <a class="btn btn-secondary" href="register">Registrovať</a>
                 <a class="btn btn-secondary" href="shopping-cart"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>

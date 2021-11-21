@@ -409,3 +409,7 @@ form input {
 .quantity-selection {
     max-height: 5vh;
 }
+
+.logo-small {
+    max-height: 80px;
+}
