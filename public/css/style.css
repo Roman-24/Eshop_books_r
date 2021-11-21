@@ -413,3 +413,7 @@ form input {
 .logo-small {
     max-height: 80px;
 }
+
+.user-name {
+    color: white;
+}

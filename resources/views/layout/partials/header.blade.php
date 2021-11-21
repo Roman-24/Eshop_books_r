@@ -14,10 +14,23 @@
                 </div>
             </div>
             <div class="col-12 col-md-3 buttons">
+                @auth
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a class="btn btn-secondary" href="route('logout')"
+                                           onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </a>
+                </form>
+                <p class="user-name">{{ Auth::user()->email }}</p>
+                @else
                 <a class="btn btn-secondary home-btn" href="{{ url('') }}"><i class="fas fa-home"></i></a>
                 <a class="btn btn-secondary" href="login">Prihlásiť</a>
                 <a class="btn btn-secondary" href="register">Registrovať</a>
                 <a class="btn btn-secondary" href="shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+                @endauth
             </div>
         </div>
     </div>

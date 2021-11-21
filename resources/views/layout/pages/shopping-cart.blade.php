@@ -8,7 +8,7 @@
             <div class="row m-0">
 {{--                @include('layout.partials.book-item', ['item'=>$item])--}}
                 <div class="col-0 align-self-center col-lg-2">
-                    <div class="d-flex text-center quantity-selection ">
+                    <div class="d-flex text-center quantity-selection">
                         <button class="btn btn-link px-2"
                                 onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                             <i class="fas fa-minus"></i>
