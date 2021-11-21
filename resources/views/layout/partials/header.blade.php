@@ -25,12 +25,12 @@
                             <i class="fas fa-sign-out-alt"></i>
                         </a>
                     </form>
-                    <a class="btn btn-secondary" href="shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="btn btn-secondary" href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
                 @else
                     <a class="btn btn-secondary home-btn" href="{{ url('') }}"><i class="fas fa-home"></i></a>
-                    <a class="btn btn-secondary" href="login">Prihlásiť</a>
-                    <a class="btn btn-secondary" href="register">Registrovať</a>
-                    <a class="btn btn-secondary" href="shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="btn btn-secondary" href="/login">Prihlásiť</a>
+                    <a class="btn btn-secondary" href="/register">Registrovať</a>
+                    <a class="btn btn-secondary" href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
                 @endauth
             </div>
         </div>
