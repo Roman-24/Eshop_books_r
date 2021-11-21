@@ -1,6 +1,6 @@
-@extends('layout.app')
+@extends('layout.app', $categories)
 
-@section('title', $category->name)
+@section('title', $title)
 
 @section('content')
 
@@ -8,7 +8,7 @@
         {{-- HEAD OF BLOCK --}}
         <div class="row m-0 category-selected">
             <div class="col-9">
-                <h2>Knihy z kategórie {{$category->name}}</h2>
+                <h2>{{$title}}</h2>
             </div>
             <div class="col-3 ">
                 <select class="form-select sort-selection" aria-label="Default select example" id="sorter">
@@ -25,6 +25,9 @@
             @foreach($books as $book)
                 @include("layout.partials.book-item", $book)
             @endforeach
+            @if(count($books)==0)
+                <div class="information">Žiadna kniha nebola nájdená</div>
+            @endif
         </div>
 
         {{-- PAGE NAVIGATION --}}

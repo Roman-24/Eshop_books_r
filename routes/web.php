@@ -37,4 +37,4 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
-//Route::post('/category', 'CategoryController@showWithSearch');
+Route::post('/search', [CategoryController::class, 'search'])->name("search.store");

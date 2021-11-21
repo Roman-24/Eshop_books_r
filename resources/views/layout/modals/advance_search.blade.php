@@ -1,22 +1,28 @@
 <div class="modal fade" id="advanced-search" aria-hidden="true">
     <div class="modal-dialog">
-        <form class="modal-content" action="products.html">
+        <form class="modal-content" action="{{ route("search.store") }}" method="POST">
+        @csrf <!-- {{ csrf_field() }} -->
             <div class="modal-header">
                 <h5 class="modal-title">Vyhľadávanie</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <label for="name">Názov knihy</label>
-                <input class="form-control" id="name" placeholder="Názov knihy" type="text"/>
+                <label for="tittle">Názov knihy</label>
+                <input name="tittle" class="form-control" id="tittle" placeholder="Názov knihy" type="text"/>
 
-                <label for="autor">Autor</label>
-                <input class="form-control" id="autor" placeholder="Autor" type="text"/>
+                <label for="author">Autor</label>
+                <input name="author" class="form-control" id="author" placeholder="Autor" type="text"/>
 
-                <label for="year">Rok vydania</label>
-                <input class="form-control" id="year" placeholder="Rok vydania" type="text"/>
+                <label for="maxprice">Maximálna cena</label>
+                <input name="maxprice" class="form-control" id="maxprice" placeholder="Maximálna cena" type="number"/>
 
-                <label for="genre">Žáner</label>
-                <input class="form-control" id="genre" placeholder="Žáner" type="text"/>
+                <label for="category">Kategória</label>
+                <select name="category" id="category" class="form-select">
+                    <option value="">Vybrať kategóriu</option>
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="modal-footer">
                 <input type="submit" class="btn btn-primary" value="Vyhľadať"/>

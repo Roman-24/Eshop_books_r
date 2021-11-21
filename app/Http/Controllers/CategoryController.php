@@ -6,6 +6,8 @@ use App\Models\Book;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -29,23 +31,6 @@ class CategoryController extends Controller
     {
         //
     }
-
-//    public function hello()
-//    {
-//        print("hello");
-//        print("hello");
-//        print("hello");
-//        print("hello");
-//        print("hello");
-//        print("hello");
-//        print("hello");
-//        print("hello");
-//        print("hello");
-//        print("hello");
-//        print("hello");
-//        print("hello");
-//        print("hello");
-//    }
 
     /**
      * Store a newly created resource in storage.
@@ -78,7 +63,7 @@ class CategoryController extends Controller
 
         $category = Category::find($id);
 
-        return view('layout.pages.products')->with("category", $category)->with("books", $books)->with("categories", Category::all());
+        return view('layout.pages.products')->with("title", ("Knihy z kategórie: " . $category->name))->with("books", $books)->with("categories", Category::all());
     }
 
     /**
@@ -113,5 +98,37 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+//        $data = $request->all();
+//        print(implode("|", $request->all()));
+//        die($request->request->get('name'));
+//        var_dump($request->input('name'));
+//        $sort = $_GET["sort"] ?? null;
+//        if ($sort) {
+//            $books = Book::where('category', 1)->get();
+//            if (substr($sort, 0, strlen($sort)) === "desc")
+//                $books = $books->sortByDesc(substr($sort, 4));
+//            else
+//                $books = $books->sortBy($sort);
+//        } else
+//        $books = Book::where('author', $request->get('author'))->get();
+//        print($request->get('tittle'));
+        var_dump($request->get('category'));
+        $category = $request->get('category');
+        if ($category == "")
+            $category = "%";
+        $price = $request->get('maxprice');
+        if ($price == NULL)
+            $price = 9999999999999;
+        $books = Book::where(DB::raw('lower(tittle)'), "like", "%" . strtolower($request->get('tittle')) . "%")
+            ->where(DB::raw('lower(author)'), "like", "%" . strtolower($request->get('author')) . "%")
+            ->where("category", "like", $category)
+            ->where("price", "<", $price)
+            ->get();
+
+        return view('layout.pages.products')->with("title", "Vyhľadávanie")->with("books", $books)->with("categories", Category::all());
     }
 }

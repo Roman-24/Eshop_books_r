@@ -299,6 +299,13 @@ aside nav .sub-category {
     padding-left: 20px;
 }
 
+.information {
+    text-align: center;
+    font-size: 1.1em;
+    color: #333333;
+    padding: 40px 0;
+}
+
 footer {
     margin-top: 20px;
     padding: 30px 0;
