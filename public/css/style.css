@@ -146,7 +146,7 @@ aside nav a:hover {
     color: var(--text-color);
 }
 
-nav {
+aside nav {
     padding: 25px 35px;
     background: var(--block-backgroud);
     margin-right: 10px;

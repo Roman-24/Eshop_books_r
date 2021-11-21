@@ -1,5 +1,5 @@
 <header>
-    <div class="container top-nav">
+    <nav class="container top-nav">
         <div class="row m-0 align-items-center">
             <a href="{{ url('') }}" class="col-3 logo">
                 <img src="{{ asset('assets/logo.svg') }}" alt="Logo" width="70px" height="70px">
@@ -34,6 +34,6 @@
                 @endauth
             </div>
         </div>
-    </div>
+    </nav>
     <div class="banner" style="background-image: url({{ asset('assets/banner.png') }})"></div>
 </header>
