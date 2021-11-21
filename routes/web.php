@@ -38,3 +38,4 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 Route::post('/search', [CategoryController::class, 'search'])->name("search.store");
+Route::get('/search', [CategoryController::class, 'search'])->name("search.store");

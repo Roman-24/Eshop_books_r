@@ -53,6 +53,7 @@ class CategoryController extends Controller
     {
         $sort = $_GET["sort"] ?? null;
         if ($sort) {
+            var_dump($sort);
             $books = Book::where('category', $id)->get();
             if (substr($sort, 0, strlen($sort)) === "desc")
                 $books = $books->sortByDesc(substr($sort, 4));
@@ -116,7 +117,6 @@ class CategoryController extends Controller
 //        } else
 //        $books = Book::where('author', $request->get('author'))->get();
 //        print($request->get('tittle'));
-        var_dump($request->get('category'));
         $category = $request->get('category');
         if ($category == "")
             $category = "%";
@@ -128,6 +128,14 @@ class CategoryController extends Controller
             ->where("category", "like", $category)
             ->where("price", "<", $price)
             ->get();
+
+        $sort = $_GET["sort"] ?? null;
+        if ($sort) {
+            if (substr($sort, 0, strlen($sort)) === "desc")
+                $books = $books->sortByDesc(substr($sort, 4));
+            else
+                $books = $books->sortBy($sort);
+        }
 
         return view('layout.pages.products')->with("title", "Vyhľadávanie")->with("books", $books)->with("categories", Category::all());
     }
