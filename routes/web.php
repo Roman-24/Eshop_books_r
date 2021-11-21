@@ -39,7 +39,4 @@ require __DIR__ . '/auth.php';
 
 //Route::post('/category', 'CategoryController@showWithSearch');
 
-Route::get('/add-to-cart/{id}', [
-    'uses' => 'BookController@getAddToCart',
-    'as' => 'book.addToCart'
-]);
+Route::get('/add-to-cart/{id}',[BookController::class, "getAddToCart"])->name("book.addToCart");

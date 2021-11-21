@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Models\Category;
+use Illuminate\Http\Request;
+use Session;
 
 class BookController extends Controller
 {
@@ -13,6 +16,18 @@ class BookController extends Controller
     {
         $books = Book::all();
         return view('layout.pages.products', compact('books', $books));
+    }
+
+    /* func na pridanie do kosiku */
+    public function getAddToCart(Request $request, $id){
+        $book = Book::find($id);
+        $old_cart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($old_cart);
+        $cart->add($book, $book->id);
+
+        $request->session()->put('cart', $cart);
+        dd($request->session()->get('cart', $cart));
+        return redirect()->route('book.index');
     }
 
     /**
