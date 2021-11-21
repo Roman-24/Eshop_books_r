@@ -1,7 +1,7 @@
 <article>
     <a href="/book/{{$book->id}}" class="book-item">
         <div class="row m-0">
-            <div class="image col-2" style="background-image: url(public/assets/book-cover.jpg)"></div>
+            <div class="image col-2" style="background-image: url({{asset('assets/products/'.$book->img_path)}})"></div>
             <div class="item-details col-10">
                 <cite class="book-title">{{$book->tittle}}</cite>
                 <div class="book-info">{{$book->author}},
