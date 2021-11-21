@@ -38,3 +38,8 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 //Route::post('/category', 'CategoryController@showWithSearch');
+
+Route::get('/add-to-cart/{id}', [
+    'uses' => 'BookController@getAddToCart',
+    'as' => 'book.addToCart'
+]);
