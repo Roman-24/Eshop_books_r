@@ -117,6 +117,7 @@ class CategoryController extends Controller
 //        } else
 //        $books = Book::where('author', $request->get('author'))->get();
 //        print($request->get('tittle'));
+        var_dump($request->get('tittle'));
         $category = $request->get('category');
         if ($category == "")
             $category = "%";

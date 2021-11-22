@@ -8,7 +8,7 @@
                 <form action="{{ route("search.store") }}" method="POST">
                 @csrf <!-- {{ csrf_field() }} -->
                     <div class="input-group">
-                        <input type="search" class="form-control" placeholder="Vyhľadať poďla názvu knihy" aria-label="Search"
+                        <input name="tittle" type="search" class="form-control" placeholder="Vyhľadať poďla názvu knihy" aria-label="Search"
                                aria-describedby="search-addon"/>
                         <span class="input-group-text border-0" id="search-addon">
                             <i class="fas fa-search"></i>
