@@ -53,7 +53,6 @@ class CategoryController extends Controller
     {
         $sort = $_GET["sort"] ?? null;
         if ($sort) {
-            var_dump($sort);
             $books = Book::where('category', $id)->get();
             if (substr($sort, 0, strlen($sort)) === "desc")
                 $books = $books->sortByDesc(substr($sort, 4));
