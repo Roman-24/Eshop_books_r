@@ -23,23 +23,23 @@ class BookController extends Controller
         $book = Book::find($id);
 
         $old_cart = null;
-        if ($request->session()->has('cart')){
-            $old_cart = $request->session()->get('cart');
+        if (session()->has('cart')){
+            $old_cart = session()->get('cart');
         }
         $cart = new Cart($old_cart);
         $cart->add($book, $book->id);
 
-        $request->session()->put('cart', $cart);
-//        dd($request->session()->get('cart', $cart));
+        session()->put('cart', $cart);
+//        dd(session()->get('cart', $cart));
         return redirect("book/" . $id);
 //        return redirect()->route('book.index');
     }
 
     public function getCart(Request $request){
-        if ($request->session()->has('cart')){
+        if (session()->has('cart')){
             return view('layout.pages.shopping-cart', ['items' => [], 'total_price' => 0]);
         }
-        $oldCart = $request->session()->get('cart');
+        $oldCart = session()->get('cart');
         $cart = new Cart($oldCart);
         return view('layout.pages.shopping-cart', ['items' => $cart->items, 'total_price' => $cart->total_price]);
     }
