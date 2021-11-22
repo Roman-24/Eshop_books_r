@@ -1,7 +1,7 @@
 @extends('layout.app_light2')
 @section('title', "Objednávka")
 @section('content')
-    <div class="block text-center">
+    <section class="block text-center">
         <h2>Doprava a platba</h2>
         <form action="#">
             <label for="name">Meno a priezvysko</label>
@@ -28,7 +28,9 @@
             </select>
 
             <label for="shipment-method">Spôsob doručenia</label>
-            <input disabled class="form-control" id="shipment-method" value="DHL kurier" type="text"/>
+            <select class="form-select" name="shipment-method" id="shipment-method">
+                <option value="visa">DHL kurier</option>
+            </select>
 
             <label for="price">Na úhradu s DPH</label>
             <input disabled class="form-control" id="price" value="100 €" type="text"/>
@@ -38,5 +40,5 @@
                 <input type="submit" value="Zaplatiť a objednať" class="btn btn-primary">
             </div>
         </form>
-    </div>
+    </section>
 @stop
