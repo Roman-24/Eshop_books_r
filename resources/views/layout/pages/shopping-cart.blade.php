@@ -1,13 +1,13 @@
-@extends('layout.app')
+@extends('layout.app_light2')
 @section('title', "Nákupný košík")
 @section('content')
 <div class="block">
     <h2>Obsah nákupného košíka</h2>
     <div class="basket-list">
-        @if(Session::has('cart'))
-            dd($request->session()->get('cart', $cart));
+        @if(session()->has('cart'))
             <a href="#" class="book-item">
                 <div class="row m-0">
+{{--                    {{dd(session()->get('cart'))}}--}}
                     @foreach($items as $book)
                         @include('layout.partials.book-item', ['book'=>$book])
                     @endforeach
@@ -18,7 +18,7 @@
     </div>
     <div class="text-center">
         <p>Spolu: {{$total_price}}</p>
-        <a href="payment.html" class="btn btn-primary">Nakúpiť produkty</a>
+        <a href="{{route('payment.index')}}" class="btn btn-primary">Nakúpiť produkty</a>
     </div>
 </div>
 @stop

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PaymentController;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -40,5 +41,8 @@ require __DIR__ . '/auth.php';
 Route::post('/search', [CategoryController::class, 'search'])->name('search.store');
 Route::get('/search', [CategoryController::class, 'search'])->name('search.store');
 
+//Route::get('/book', [BookController::class, 'getID'])->name('book.index');
 Route::get('/add-to-cart/{id}', [BookController::class, 'getAddToCart'])->name('book.addToCart');
 Route::get('/shopping-cart', [BookController::class, 'getCart'])->name('book.shoppingCart');
+
+Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');

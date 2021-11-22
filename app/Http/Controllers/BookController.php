@@ -22,13 +22,10 @@ class BookController extends Controller
     public function getAddToCart(Request $request, $id){
         $book = Book::find($id);
 
-        if (Session::has('cart')){
-            $old_cart = Session::get('cart');
+        $old_cart = null;
+        if ($request->session()->has('cart')){
+            $old_cart = $request->session()->get('cart');
         }
-        else{
-            $old_cart = null;
-        }
-
         $cart = new Cart($old_cart);
         $cart->add($book, $book->id);
 
@@ -38,13 +35,13 @@ class BookController extends Controller
 //        return redirect()->route('book.index');
     }
 
-    public function getCart(){
-        if (!Session::has('cart')){
-            return view('layout.pages.shopping-cart', ['books' => null]);
+    public function getCart(Request $request){
+        if ($request->session()->has('cart')){
+            return view('layout.pages.shopping-cart', ['items' => [], 'total_price' => 0]);
         }
-        $oldCart = Session::get('cart');
+        $oldCart = $request->session()->get('cart');
         $cart = new Cart($oldCart);
-        return view('layout.pages.shopping-cart', ['books' => $cart->items, 'total_price' => $cart->total_price]);
+        return view('layout.pages.shopping-cart', ['items' => $cart->items, 'total_price' => $cart->total_price]);
     }
 
     /**
