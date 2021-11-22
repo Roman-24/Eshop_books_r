@@ -373,7 +373,7 @@ footer .footer-socials li:hover a {
 }
 
 /* FORMS */
-form {
+section form {
     display: inline-block;
     width: 450px;
     max-width: 100%;
@@ -384,13 +384,13 @@ form {
 form label, form input {
 }
 
-form label {
+section form label {
     font-size: .9em;
     font-weight: bold;
     margin-left: 2px;
 }
 
-form input {
+section form input {
     margin-bottom: 12px;
 }
 

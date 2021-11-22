@@ -5,13 +5,16 @@
                 <img src="{{ asset('assets/logo.svg') }}" alt="Logo" width="70px" height="70px">
             </a>
             <div class="col-12 col-md-6">
-                <div class="input-group">
-                    <input type="search" class="form-control" placeholder="Vyhľadať poďla názvu knihy, autora alebo žánru" aria-label="Search"
-                           aria-describedby="search-addon"/>
-                    <span class="input-group-text border-0" id="search-addon">
-                        <i class="fas fa-search"></i>
-                    </span>
-                </div>
+                <form action="{{ route("search.store") }}" method="POST">
+                @csrf <!-- {{ csrf_field() }} -->
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Vyhľadať poďla názvu knihy" aria-label="Search"
+                               aria-describedby="search-addon"/>
+                        <span class="input-group-text border-0" id="search-addon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                </form>
             </div>
             <div class="col-12 col-md-3 buttons">
                 @auth
