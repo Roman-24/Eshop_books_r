@@ -21,13 +21,30 @@ class BookController extends Controller
     /* func na pridanie do kosiku */
     public function getAddToCart(Request $request, $id){
         $book = Book::find($id);
-        $old_cart = Session::has('cart') ? Session::get('cart') : null;
+
+        if (Session::has('cart')){
+            $old_cart = Session::get('cart');
+        }
+        else{
+            $old_cart = null;
+        }
+
         $cart = new Cart($old_cart);
         $cart->add($book, $book->id);
 
         $request->session()->put('cart', $cart);
-        dd($request->session()->get('cart', $cart));
-        return redirect()->route('book.index');
+//        dd($request->session()->get('cart', $cart));
+        return redirect("book/" . $id);
+//        return redirect()->route('book.index');
+    }
+
+    public function getCart(){
+        if (!Session::has('cart')){
+            return view('layout.pages.shopping-cart', ['books' => null]);
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        return view('layout.pages.shopping-cart', ['books' => $cart->items, 'total_price' => $cart->total_price]);
     }
 
     /**

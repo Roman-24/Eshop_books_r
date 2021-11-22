@@ -4,7 +4,7 @@ namespace  App;
 
 class Cart
 {
-    public $items;
+    public $items = null;
     public $total_qty = 0;
     public $total_price = 0;
 
