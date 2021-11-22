@@ -30,7 +30,9 @@
                     </form>
                     <a class="btn btn-secondary" href="{{route('book.shoppingCart')}}">
                         <i class="fas fa-shopping-cart"></i>
-                        <span>{{ Session::has('cart') ? Session::get('cart')->total_qty : ''}}</span>
+                        @if(!empty(session('cart', array())))
+                            <span class="badge badge-light">{{array_sum(session('cart', array()))}}</span>
+                        @endif
                     </a>
                 @else
                     <a class="btn btn-secondary home-btn" href="{{ url('') }}"><i class="fas fa-home"></i></a>
@@ -38,7 +40,9 @@
                     <a class="btn btn-secondary" href="/register">Registrovať</a>
                     <a class="btn btn-secondary" href="{{route('book.shoppingCart')}}">
                         <i class="fas fa-shopping-cart"></i>
-                        <span>{{ Session::has('cart') ? Session::get('cart')->total_qty : ''}}</span>
+                        @if(!empty(session('cart', array())))
+                            <span class="badge badge-light">{{session()->get('cart')->total_qty}}</span>
+                        @endif
                     </a>
                 @endauth
             </div>
