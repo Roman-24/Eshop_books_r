@@ -31,7 +31,7 @@
                     <a class="btn btn-secondary" href="{{route('book.shoppingCart')}}">
                         <i class="fas fa-shopping-cart"></i>
                         @if(!empty(session('cart', array())))
-                            <span class="badge badge-light">{{array_sum(session('cart', array()))}}</span>
+                            <span class="badge badge-light">{{session()->get('cart')->total_qty}}</span>
                         @endif
                     </a>
                 @else

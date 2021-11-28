@@ -15,6 +15,11 @@
                     {{$book->description}}
                 </p>
                 <div class="book-price">{{$book->price}}€</div>
+{{--                @can('update', $book)--}}
+                    <a class="btn btn-warning" href="{{ URL::to('book/' . $book->id . '/edit') }}">
+                        Editovať
+                    </a>&nbsp;&nbsp;
+{{--                @endcan--}}
                 <a class="btn btn-primary" href="{{route('book.addToCart', ['id' => $book->id])}}">Pridať do košíka</a>
             </div>
         </div>
