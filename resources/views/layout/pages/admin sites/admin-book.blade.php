@@ -17,15 +17,15 @@
                 <textarea class="book-description text-input" rows="10" placeholder="Popis knihy" name="description">{{$book->description}}</textarea>
                 <input type="number" class="book-price text-input" name="price" value="{{$book->price}}">
                 {{--            <a class="btn btn-primary" href="{{route('book.addToCart', ['id' => $book->id])}}">Pridať do košíka</a>--}}
-{{--                @if ($errors->any())--}}
-{{--                    <div class="alert alert-danger">--}}
-{{--                        <ul>--}}
-{{--                            @foreach ($errors->all() as $error)--}}
-{{--                                <li>{{ $error }}</li>--}}
-{{--                            @endforeach--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                @endif--}}
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <button type="submit" class="btn btn-primary">Uložiť zmeny</button>
             </form>
             {{--                @can('delete', $book)--}}

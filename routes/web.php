@@ -29,6 +29,13 @@ Route::get('shopping-cart', function () {
 });
 
 Route::resource('book', BookController::class);
+//Route::get('/book', [BookController::class, 'index']);
+//Route::get('/book/create', [BookController::class, 'create'])->middleware(['auth', 'can:create,book']);
+//Route::post('/book/', [BookController::class, 'store'])->middleware(['auth', 'can:store,book']);
+//Route::get('/book/{book}/', [BookController::class, 'show']);
+//Route::get('/book/{book}/edit/', [BookController::class, 'edit'])->middleware(['auth', 'can:update,book']);
+//Route::put('/book/{book}', [BookController::class, 'update'])->middleware(['auth', 'can:update,book']);
+//Route::delete('/book/{book}/', [BookController::class, 'destroy'])->middleware(['auth', 'can:delete,book']);
 
 Route::resource('category', CategoryController::class);
 

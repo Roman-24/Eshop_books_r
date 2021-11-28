@@ -53,7 +53,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('layout.pages.admin sites.create-book');
+        return view('layout.pages.admin sites.create-book')->with("categories", Category::all());
     }
 
     /**
@@ -69,8 +69,6 @@ class BookController extends Controller
 //            'description' => 'required',
 //        ]);
 //        @todo pridat validáciu 2 ??
-
-        $userId = Auth::id();
 
         $book = Book::create([
             'title' => $request->title,

@@ -15,11 +15,15 @@
                     {{$book->description}}
                 </p>
                 <div class="book-price">{{$book->price}}€</div>
+                @auth
+                    @if(Auth::user()->hasRole("ADMIN"))
 {{--                @can('update', $book)--}}
                     <a class="btn btn-warning" href="{{ URL::to('book/' . $book->id . '/edit') }}">
                         Editovať
                     </a>&nbsp;&nbsp;
 {{--                @endcan--}}
+                    @endif
+                @endauth
                 <a class="btn btn-primary" href="{{route('book.addToCart', ['id' => $book->id])}}">Pridať do košíka</a>
             </div>
         </div>

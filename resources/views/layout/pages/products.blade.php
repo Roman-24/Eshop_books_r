@@ -7,7 +7,15 @@
     <div class="block">
         {{-- HEAD OF BLOCK --}}
         <div class="row m-0 category-selected">
-            <div class="col-9">
+            @auth
+                @if(Auth::user()->hasRole("ADMIN"))
+                <div class="col-3 ">
+    {{--                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new-book">Pridať knihu do kategórie</button>--}}
+                    <a class="btn btn-warning" href="{{route('book.create')}}">Pridať knihu do kategórie</a>
+                </div>
+                @endif
+            @endauth
+            <div class="col-6">
                 <h2>{{$title}}</h2>
             </div>
             <div class="col-3 ">
