@@ -30,9 +30,7 @@
                     </form>
                     <a class="btn btn-secondary" href="{{route('book.shoppingCart')}}">
                         <i class="fas fa-shopping-cart"></i>
-                        @if(!empty(session('cart', array())))
-                            <span class="badge badge-light">{{session()->get('cart')->total_qty}}</span>
-                        @endif
+                        <span class="badge badge-light">{{ Cart::getTotalQuantity()}}</span>
                     </a>
                 @else
                     <a class="btn btn-secondary home-btn" href="{{ url('') }}"><i class="fas fa-home"></i></a>

@@ -24,7 +24,15 @@
 {{--                @endcan--}}
                     @endif
                 @endauth
-                <a class="btn btn-primary" href="{{route('book.addToCart', ['id' => $book->id])}}">Pridať do košíka</a>
+                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" value="{{ $book->id }}" name="id">
+                    <input type="hidden" value="{{ $book->tittle }}" name="name">
+                    <input type="hidden" value="{{ $book->price }}" name="price">
+                    <input type="hidden" value="{{ $book->img_path }}"  name="image">
+                    <input type="hidden" value="1" name="quantity">
+                    <button class="btn btn-primary">Pridať do košíka</button>
+                </form>
             </div>
         </div>
     </div>
