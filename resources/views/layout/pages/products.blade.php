@@ -15,7 +15,7 @@
                 </div>
                 @endif
             @endauth
-            <div class="col-6">
+            <div class="col-9">
                 <h2>{{$title}}</h2>
             </div>
             <div class="col-3 ">
@@ -23,7 +23,7 @@
                     <option value="">Zoradiť výsledky</option>
                     <option value="descprice">Cena vzostupne</option>
                     <option value="price">Cena zostupne</option>
-                    <option value="name">Abecedne</option>
+                    <option value="tittle">Abecedne</option>
                 </select>
             </div>
         </div>
