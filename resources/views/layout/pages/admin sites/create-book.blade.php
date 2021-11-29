@@ -10,7 +10,13 @@
 
 {{--                    @todo treba pridať aby to poslalo aj kategoriu a asi aj id v db ake bude--}}
                     <label for="new-book-category">Kategória</label>
-                    <input class="form-control" id="new-book-category" placeholder="Číslo kategórie" type="text" name="category">
+                    <select name="category" id="new-book-category" class="form-control">
+                        @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->id}}, {{$category->name}}</option>
+                        @endforeach
+                    </select>
+
+{{--                    <input class="form-control" id="new-book-category" placeholder="Číslo kategórie" type="text" name="category">--}}
 
                     <label for="new-book-name">Názov</label>
                     <input class="form-control" id="new-book-name" placeholder="Meno knihy" type="text" name="tittle"/>
