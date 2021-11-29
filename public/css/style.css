@@ -210,6 +210,8 @@ aside nav {
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #b6b6b6;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .book-item {

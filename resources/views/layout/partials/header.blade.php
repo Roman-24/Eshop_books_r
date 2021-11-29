@@ -30,7 +30,7 @@
                     </form>
                     <a class="btn btn-secondary" href="{{route('cart.list')}}">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="badge badge-light">{{ Cart::getTotalQuantity()}}</span>
+                        <span class="badge badge-light">{{ Cart::getTotalQuantity() }}</span>
                     </a>
                 @else
                     <a class="btn btn-secondary home-btn" href="{{ url('') }}"><i class="fas fa-home"></i></a>
