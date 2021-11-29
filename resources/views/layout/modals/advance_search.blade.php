@@ -1,6 +1,6 @@
 <div class="modal fade" id="advanced-search" aria-hidden="true">
     <div class="modal-dialog">
-        <form class="modal-content" action="{{ route("search.store") }}" method="POST">
+        <form class="modal-content" action="{{ route("search.store") }}" method="POST" id="advanced-search-form">
         @csrf <!-- {{ csrf_field() }} -->
             <div class="modal-header">
                 <h5 class="modal-title">Vyhľadávanie</h5>

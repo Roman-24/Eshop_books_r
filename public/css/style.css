@@ -383,9 +383,6 @@ section form {
     font-size: 1.2em;
 }
 
-form label, form input {
-}
-
 section form label {
     font-size: .9em;
     font-weight: bold;
@@ -437,9 +434,9 @@ section form input {
 
 .category-selected h2 {
     text-align: left;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    border-bottom: 0px solid #b6b6b6;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0 solid #b6b6b6;
 }
 
 .quantity-selection {

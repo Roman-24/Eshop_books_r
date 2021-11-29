@@ -131,7 +131,7 @@ class CategoryController extends Controller
 
         $sort = $_GET["sort"] ?? null;
         if ($sort) {
-            if (substr($sort, 0, strlen($sort)) === "desc")
+            if (substr($sort, 0, 4) === "desc")
                 $books = $books->sortByDesc(substr($sort, 4));
             else
                 $books = $books->sortBy($sort);
