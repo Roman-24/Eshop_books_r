@@ -124,7 +124,6 @@ class BookController extends Controller
 //            'description' => 'required',
 //        ]);
 //        @todo pridat validáciu ??
-        $book->category = $request->category;
         $book->tittle = $request->tittle;
         $book->description = $request->description;
         $book->author = $request->author;
