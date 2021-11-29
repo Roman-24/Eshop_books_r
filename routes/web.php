@@ -50,7 +50,7 @@ Route::post('/search', [CategoryController::class, 'search'])->name('search.stor
 Route::get('/search', [CategoryController::class, 'search'])->name('search.store');
 
 //Route::get('/book', [BookController::class, 'getID'])->name('book.index');
-Route::get('/add-to-cart/{id}', [BookController::class, 'addToCart'])->name('book.addToCart');
+//Route::get('/add-to-cart/{id}', [BookController::class, 'addToCart'])->name('book.addToCart');
 Route::get('/shopping-cart', [BookController::class, 'getCart'])->name('book.shoppingCart');
 
 Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');

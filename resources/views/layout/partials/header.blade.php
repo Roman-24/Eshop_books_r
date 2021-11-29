@@ -28,7 +28,7 @@
                             <i class="fas fa-sign-out-alt"></i>
                         </a>
                     </form>
-                    <a class="btn btn-secondary" href="{{route('book.shoppingCart')}}">
+                    <a class="btn btn-secondary" href="{{route('cart.list')}}">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="badge badge-light">{{ Cart::getTotalQuantity()}}</span>
                     </a>
