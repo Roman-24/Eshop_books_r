@@ -10,6 +10,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+//use Illuminate\Support\Facades\Session;
 use Session;
 
 class BookController extends Controller
@@ -38,7 +39,7 @@ class BookController extends Controller
     }
 
     public function getCart(Request $request){
-        if ($request->session()->has('cart')){
+        if (!$request->session()->has('cart')){
             return view('layout.pages.shopping-cart', ['items' => [], 'total_price' => 0]);
         }
         $oldCart = $request->session()->get('cart');
