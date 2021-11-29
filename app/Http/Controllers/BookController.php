@@ -71,7 +71,8 @@ class BookController extends Controller
 //        @todo pridat validáciu 2 ??
 
         $book = Book::create([
-            'title' => $request->title,
+            'category' => $request->category,
+            'tittle' => $request->tittle,
             'description' => $request->description,
             'author' => $request->author,
             'publish_date' => $request->publish_date,
@@ -122,6 +123,7 @@ class BookController extends Controller
 //            'description' => 'required',
 //        ]);
 //        @todo pridat validáciu ??
+        $book->category = $request->category;
         $book->tittle = $request->tittle;
         $book->description = $request->description;
         $book->author = $request->author;
