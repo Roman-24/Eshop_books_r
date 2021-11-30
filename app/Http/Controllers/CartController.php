@@ -51,7 +51,7 @@ class CartController extends Controller
     public function removeCart(Request $request)
     {
         \Cart::remove($request->id);
-        session()->flash('success', 'Položka bola úspešne odstránená!');
+        session()->flash('success', 'Položka bola úspešne odobraná!');
 
         return redirect()->route('cart.list');
     }
@@ -60,7 +60,7 @@ class CartController extends Controller
     {
         \Cart::clear();
 
-        session()->flash('success', 'Všetky položky boli úspešne odstránené!');
+        session()->flash('success', 'Všetky položky boli úspešne odobrané!');
 
         return redirect()->route('cart.list');
     }

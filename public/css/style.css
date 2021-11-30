@@ -79,6 +79,12 @@ header input[type="search"], header input[type="search"]:focus {
     margin-top: 5px;
 }
 
+.top-nav .badge{
+    padding: 0;
+    font-size: .9em;
+    margin-left: 4px;
+}
+
 @media only screen and (max-width: 768px) {
     .logo {
         display: none;
