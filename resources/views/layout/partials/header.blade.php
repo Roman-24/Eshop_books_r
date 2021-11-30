@@ -36,11 +36,9 @@
                     <a class="btn btn-secondary home-btn" href="{{ url('') }}"><i class="fas fa-home"></i></a>
                     <a class="btn btn-secondary" href="/login">Prihlásiť</a>
                     <a class="btn btn-secondary" href="/register">Registrovať</a>
-                    <a class="btn btn-secondary" href="{{route('book.shoppingCart')}}">
+                    <a class="btn btn-secondary" href="{{route('cart.list')}}">
                         <i class="fas fa-shopping-cart"></i>
-                        @if(!empty(session('cart', array())))
-                            <span class="badge badge-light">{{session()->get('cart')->total_qty}}</span>
-                        @endif
+                        <span class="badge badge-light">{{ Cart::getTotalQuantity()}}</span>
                     </a>
                 @endauth
             </div>
