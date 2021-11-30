@@ -9,7 +9,7 @@
 
 <div class="container">
     <div class="row">
-        <main class="col-12 col-lg-12">
+        <main class="col-12 col-lg-8 offset-lg-2">
             @yield('content')
         </main>
     </div>

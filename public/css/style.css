@@ -79,7 +79,7 @@ header input[type="search"], header input[type="search"]:focus {
     margin-top: 5px;
 }
 
-.top-nav .badge{
+.top-nav .badge {
     padding: 0;
     font-size: .9em;
     margin-left: 4px;
@@ -279,10 +279,12 @@ aside nav {
     background-position: center;
 }
 
-.book-item .cover-image {
+.book-item .basket-image {
     max-height: 80px;
     width: auto;
     display: inline-block;
+    margin-right: 10px;
+    margin-left: 0;
 }
 
 .book-item .item-details {
@@ -295,6 +297,8 @@ aside nav {
     align-items: center;
     justify-content: flex-end;
     min-height: 80px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
 .basket-item {
@@ -302,7 +306,6 @@ aside nav {
 }
 
 .basket-actions .book-title {
-    justify-self: flex-start;
     margin-right: auto;
     margin-left: 0;
     display: inline-block;
@@ -370,6 +373,26 @@ aside nav {
     margin-top: 10px;
 }
 
+@media only screen and (max-width: 992px) {
+    .book-item .basket-image {
+        display: none;
+    }
+
+    .basket-actions {
+        font-size: .8em;
+    }
+
+    .basket-actions .book-title {
+        font-size: 1.3em;
+    }
+
+    .basket-actions {
+        min-height: initial;
+    }
+
+    .book-item .item-details
+}
+
 .book-item .book-description {
     margin-top: 4px;
     margin-bottom: 0;
@@ -408,7 +431,7 @@ footer {
     color: white;
 }
 
-footer .footer-title{
+footer .footer-title {
     font-weight: bold;
     font-size: 1.4em;
 }
