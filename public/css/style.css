@@ -273,9 +273,95 @@ aside nav {
     background-position: center;
 }
 
+.book-item .cover-image {
+    max-height: 80px;
+    width: auto;
+    display: inline-block;
+}
+
 .book-item .item-details {
     padding-left: 20px;
     margin-bottom: 5px;
+}
+
+.basket-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 80px;
+}
+
+.basket-item {
+    display: flex;
+}
+
+.basket-actions .book-title {
+    justify-self: flex-start;
+    margin-right: auto;
+    margin-left: 0;
+    display: inline-block;
+}
+
+.basket-actions .book-title:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.basket-actions form {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.basket-actions form input[type='number'] {
+    padding: 6px 0 6px 10px;
+    position: relative;
+    width: 45px;
+    margin-right: 2px;
+}
+
+.basket-actions form input[type='number']:after {
+    content: "ks";
+    position: absolute;
+    top: 2px;
+    right: .5em;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+.basket-actions .remove-item {
+    font-size: 1.7em;
+    color: #3f3f3f;
+    transition: .2s;
+}
+
+.basket-actions .remove-item:hover {
+    color: #000000;
+}
+
+.basket-actions .fa-sync-alt {
+    transition: 1s;
+    margin-left: 10px;
+}
+
+.basket-actions .fa-sync-alt:hover {
+    transform: rotate(360deg);
+}
+
+.basket-actions > * {
+    margin-left: 20px;
+}
+
+.total-price {
+    font-size: 1.2em;
+    float: right;
+    margin-top: 10px;
+}
+
+.basket-remove-all {
+    float: left;
+    margin-top: 10px;
 }
 
 .book-item .book-description {
