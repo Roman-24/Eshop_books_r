@@ -50,7 +50,8 @@ header input[type="search"], header input[type="search"]:focus {
 }
 
 .logo img {
-    width: 100%;
+    width: 80%;
+    margin: 1px 0;
 }
 
 .home-btn {

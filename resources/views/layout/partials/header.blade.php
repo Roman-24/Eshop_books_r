@@ -2,7 +2,7 @@
     <nav class="container top-nav">
         <div class="row m-0 align-items-center">
             <a href="{{ url('') }}" class="col-3 logo">
-                <img src="{{ asset('assets/logo.svg') }}" alt="Logo" width="70px" height="70px">
+                <img src="{{ asset('assets/logo.svg') }}" alt="Logo">
             </a>
             <div class="col-12 col-md-6">
                 <form action="{{ route("search.store") }}" method="POST">
