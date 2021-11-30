@@ -421,8 +421,9 @@ section form input {
     text-decoration: none;
 }
 
-.pagination .page-link:hover {
-    color: var(--link-color);
+.pagination .page-item.active a {
+    background-color: #222222;
+    border-color: #222222;
 }
 
 /* FORM END */

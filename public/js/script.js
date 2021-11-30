@@ -1,15 +1,23 @@
 var sorter = document.getElementById("sorter")
-const urlParams = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(window.location.href);
 
 if (sorter) {
     if (urlParams.get('sort'))
-        sorter.value = urlParams.get('sort')
+        sorter.value = urlParams.get('sort');
 
     sorter.addEventListener("change", function (e) {
-        var form = document.getElementById("advanced-search-form");
-        var formAction = form.getAttribute("action");
-        form.setAttribute("action", formAction + "?sort=" + e.target.value);
-        form.submit();
+        // if advanced search is opened
+        if (window.location.href.indexOf("search") > -1) {
+            var form = document.getElementById("advanced-search-form");
+            var formAction = form.getAttribute("action");
+            form.setAttribute("action", formAction + "?sort=" + e.target.value);
+            form.submit();
+        } else {
+            // if just products preview is opened
+            var dist = window.location.href.indexOf("page") > -1 ? "&" : "?";
+            var actualUrl = window.location.href.replace(/.sort=.*/i, '');
+            window.location.href = actualUrl + dist + "sort=" + e.target.value;
+        }
     });
 }
 
@@ -34,5 +42,11 @@ window.onload = function () {
     var category = sessionStorage.getItem("category");
     if (category !== null) document.getElementById("category").value = category
 
-    sessionStorage.clear()
+    // add existing sorting to paginaion links
+    if (window.location.href.indexOf("sort") > -1) {
+        var paginationLinks = document.getElementsByClassName("page-link")
+        for (let link of paginationLinks) {
+            link.setAttribute("href", link.getAttribute("href") + window.location.href.match(/.sort=.*/i))
+        }
+    }
 }

@@ -9,8 +9,11 @@ use App\Http\Requests\UpdateCategoryRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class CategoryController extends Controller
 {
+    var $booksPerPage = 2;
+
     /**
      * Display a listing of the resource.
      *
@@ -51,15 +54,18 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
+
+        $books = Book::query()->where('category', $id);
+
         $sort = $_GET["sort"] ?? null;
         if ($sort) {
             if (substr($sort, 0, 4) === "desc") {
-                $books = Book::all()->where('category', $id)->sortByDesc(substr($sort, 4));
+                $books = $books->orderBy(substr($sort, 4), "desc")->paginate(2);
             } else {
-                $books = Book::all()->where('category', $id)->sortBy($sort);
+                $books = $books->orderBy($sort, "asc")->paginate(2);
             }
         } else {
-            $books = Book::where('category', $id)->get();
+            $books = $books->paginate(2);
         }
 
         $category = Category::find($id);
@@ -103,39 +109,28 @@ class CategoryController extends Controller
 
     public function search(Request $request)
     {
-//        $data = $request->all();
-//        print(implode("|", $request->all()));
-//        die($request->request->get('name'));
-//        var_dump($request->input('name'));
-//        $sort = $_GET["sort"] ?? null;
-//        if ($sort) {
-//            $books = Book::where('category', 1)->get();
-//            if (substr($sort, 0, strlen($sort)) === "desc")
-//                $books = $books->sortByDesc(substr($sort, 4));
-//            else
-//                $books = $books->sortBy($sort);
-//        } else
-//        $books = Book::where('author', $request->get('author'))->get();
-//        print($request->get('tittle'));
+        $books = Book::query();
+
         $category = $request->get('category');
         if ($category == "")
             $category = "%";
         $price = $request->get('maxprice');
         if ($price == NULL)
             $price = 9999999999999;
-        $books = Book::where(DB::raw('lower(tittle)'), "like", "%" . strtolower($request->get('tittle')) . "%")
+
+        $books = $books->where(DB::raw('lower(tittle)'), "like", "%" . strtolower($request->get('tittle')) . "%")
             ->where(DB::raw('lower(author)'), "like", "%" . strtolower($request->get('author')) . "%")
             ->where("category", "like", $category)
-            ->where("price", "<", $price)
-            ->get();
+            ->where("price", "<", $price);
 
         $sort = $_GET["sort"] ?? null;
         if ($sort) {
             if (substr($sort, 0, 4) === "desc")
-                $books = $books->sortByDesc(substr($sort, 4));
+                $books = $books->orderBy(substr($sort, 4), "desc");
             else
-                $books = $books->sortBy($sort);
+                $books = $books->orderBy($sort, "asc");
         }
+        $books = $books->get();
 
         return view('layout.pages.products')->with("title", "Vyhľadávanie")->with("books", $books)->with("categories", Category::all());
     }
