@@ -34,15 +34,21 @@
                             </div>
                         </div>
                     @endforeach
-                    <div class="total-price">
-                        Spolu: <strong>${{ Cart::getTotal() }}</strong>
-                    </div>
-                    <div>
-                        <form action="{{ route('cart.clear') }}" method="POST">
-                            @csrf
-                            <button class="basket-remove-all btn btn-secondary">Remove All Cart</button>
-                        </form>
-                    </div>
+                    @if(Cart::isEmpty())
+                        <div class="p-3 mb-3 rounded text-center">
+                            <p>Košík je prázdny :/</p>
+                        </div>
+                    @else
+                        <div class="total-price">
+                            Spolu: <strong>${{ Cart::getTotal() }}</strong>
+                        </div>
+                        <div>
+                            <form action="{{ route('cart.clear') }}" method="POST">
+                                @csrf
+                                <button class="basket-remove-all btn btn-secondary">Remove All Cart</button>
+                            </form>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
