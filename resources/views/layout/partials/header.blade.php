@@ -2,7 +2,7 @@
     <nav class="container top-nav">
         <div class="row m-0 align-items-center">
             <a href="{{ url('') }}" class="col-3 logo">
-                <img src="{{ asset('assets/logo.svg') }}" alt="Logo" width="70px" height="70px">
+                <img src="{{ asset('assets/logo.svg') }}" alt="Logo">
             </a>
             <div class="col-12 col-md-6">
                 <form action="{{ route("search.store") }}" method="POST">
@@ -30,7 +30,7 @@
                     </form>
                     <a class="btn btn-secondary" href="{{route('cart.list')}}">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="badge badge-light">{{ Cart::getTotalQuantity()}}</span>
+                        <span class="badge badge-light">{{ Cart::getTotalQuantity() }}</span>
                     </a>
                 @else
                     <a class="btn btn-secondary home-btn" href="{{ url('') }}"><i class="fas fa-home"></i></a>
