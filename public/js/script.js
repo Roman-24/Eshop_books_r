@@ -1,5 +1,5 @@
 var sorter = document.getElementById("sorter")
-const urlParams = new URLSearchParams(window.location.href);
+const urlParams = new URLSearchParams(window.location.search);
 
 if (sorter) {
     if (urlParams.get('sort'))
