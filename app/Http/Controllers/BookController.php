@@ -97,7 +97,10 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         // save image to storage
-        $coverImage = Storage::disk('public')->put('products', $request->cover);
+        if ($request->cover) {
+            $coverImage = Storage::disk('public')->put('products', $request->cover);
+            $book->img_path = basename($coverImage);
+        }
 
         // save data to database
         $book->tittle = $request->tittle;
@@ -105,7 +108,6 @@ class BookController extends Controller
         $book->author = $request->author;
         $book->publish_date = $request->publish_date;
         $book->price = $request->price;
-        $book->img_path = basename($coverImage);
         $book->save();
 
         if (Cache::has('book-' . $book->id)) {
