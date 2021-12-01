@@ -10,7 +10,10 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+
 //use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
+use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
 use Session;
 
 class BookController extends Controller
@@ -55,7 +58,7 @@ class BookController extends Controller
             'img_path' => $request->img_path,
         ]);
 
-        return redirect('/book/'.$book->id);
+        return redirect('/book/' . $book->id);
     }
 
     /**
@@ -80,7 +83,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        return view('layout.pages.admin sites.admin-book',compact('book',$book))
+        return view('layout.pages.admin sites.admin-book', compact('book', $book))
             ->with("categories", Category::all());
     }
 
@@ -93,25 +96,24 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-//        $request->validate([
-//            'title' => 'required|min:3',
-//            'description' => 'required',
-//        ]);
-//        @todo pridat validáciu ??
+        // save image to storage
+        $coverImage = Storage::disk('public')->put('products', $request->cover);
+
+        // save data to database
         $book->tittle = $request->tittle;
         $book->description = $request->description;
         $book->author = $request->author;
         $book->publish_date = $request->publish_date;
         $book->price = $request->price;
-        $book->img_path = $request->img_path;
+        $book->img_path = basename($coverImage);
         $book->save();
 
-        if (Cache::has('book-'.$book->id)) {
-            Cache::forget('book-'.$book->id);
+        if (Cache::has('book-' . $book->id)) {
+            Cache::forget('book-' . $book->id);
         }
         $request->session()->flash('message', 'Kniha bola úspešne zmenená.');
 
-        return redirect('/book/'.$book->id);
+        return redirect('/book/' . $book->id);
     }
 
     /**
@@ -123,8 +125,8 @@ class BookController extends Controller
     public function destroy(Request $request, Book $book)
     {
         $book->delete();
-        if (Cache::has('task-'.$book->id)) {
-            Cache::forget('task-'.$book->id);
+        if (Cache::has('task-' . $book->id)) {
+            Cache::forget('task-' . $book->id);
         }
         $request->session()->flash('message', 'Úloha bola úspešne vymazaná.');
         return redirect('/');
