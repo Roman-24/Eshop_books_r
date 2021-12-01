@@ -27,5 +27,8 @@
 }
 
 .preview-book .btn {
+    margin-top: 10px;
     float: right;
+    align-self: flex-end;
+    min-width: 140px;
 }

@@ -290,6 +290,12 @@ aside nav {
 .book-item .item-details {
     padding-left: 20px;
     margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-item .item-details-top {
+    flex-grow: 1;
 }
 
 .basket-actions {
