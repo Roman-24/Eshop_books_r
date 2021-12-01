@@ -63,6 +63,6 @@ function previewCoverImage() {
     if (file) {
         reader.readAsDataURL(file);
     } else {
-        preview.style = "background-image: url()";
+        preview.style = "background-image: url('/assets/placeholder.jpg')";
     }
 }

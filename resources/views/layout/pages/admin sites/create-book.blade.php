@@ -3,7 +3,7 @@
 @section('content')
     <div class="block book-item preview-book">
         <div class="row m-0">
-            <div class="image col-12 col-md-4" style="background-image: url({{asset('storage/products/')}})"></div>
+            <div class="image col-12 col-md-4" style="background-image: url({{asset('assets/placeholder.jpg')}})"></div>
             <div class="item-details col-8">
                 <form action="/book" method="POST">
                     {{ csrf_field() }}
@@ -46,7 +46,7 @@
                         </div>
                     @endif
 
-                    <button type="submit" class="btn btn-primary">Vytvoriť</button>
+                    <button type="submit" class="btn btn-primary">Pridať knihu</button>
                 </form>
             </div>
         </div>

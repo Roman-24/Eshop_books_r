@@ -10,7 +10,7 @@
             <div class="col-12 col-lg-9">
                 @auth
                     @if(Auth::user()->hasRole("ADMIN"))
-                        <a class="btn btn-warning float-left mr-5" href="{{route('book.create')}}">Pridať knihu do kategórie</a>
+                        <a class="btn btn-secondary float-left mr-5" href="{{route('book.create')}}">Pridať knihu do kategórie</a>
                     @endif
                 @endauth
                 <h2 class="float-left">{{$title}}</h2>
