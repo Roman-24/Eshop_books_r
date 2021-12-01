@@ -7,7 +7,7 @@
         <div class="row m-0">
             <label for="cover" class="image col-12 col-md-4" style="background-image: url({{ asset('storage/products/'.$book->img_path) }})">
             </label>
-            <div class="item-details col-8">
+            <div class="item-details col-12 col-lg-8">
                 <form action="{{url('book', [$book->id])}}" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_method" value="PUT">
                     {{ csrf_field() }}
@@ -29,7 +29,7 @@
                     @endif
                     <button type="submit" class="btn btn-primary">Uložiť zmeny</button>
                     <label for="cover" class="btn btn-secondary">Zmeniť fotku knihy</label>
-                    <input id="cover" name="cover" style="visibility:hidden;" type="file" onchange="previewCoverImage()">
+                    <input id="cover" name="cover" style="display:none;" type="file" onchange="previewCoverImage()">
                 </form>
 
                 <form action="{{url('book', [$book->id])}}" method="POST">
