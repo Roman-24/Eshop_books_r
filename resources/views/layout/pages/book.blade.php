@@ -5,7 +5,7 @@
 @section('content')
     <div class="block book-item preview-book">
         <div class="row m-0">
-            <div class="image col-12 col-md-4" style="background-image: url({{asset('storage/products/'.$book->img_path)}})"></div>
+            <div class="image col-12 col-md-4" style="background-image: url({{asset(strlen($book->img_path)>0?'storage/products/'.$book->img_path:"assets/placeholder.jpg")}})"></div>
             <div class="item-details col-12 col-md-8">
                 <div class="item-details-top">
                     <cite class="book-title">{{$book->tittle}}</cite>

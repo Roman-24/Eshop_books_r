@@ -5,7 +5,7 @@
 @section('content')
     <div class="block book-item preview-book">
         <div class="row m-0">
-            <label for="cover" class="image col-12 col-md-4" style="background-image: url({{ asset('storage/products/'.$book->img_path) }})"></label>
+            <label for="cover" class="image col-12 col-md-4" style="background-image: url({{ asset(strlen($book->img_path)>0?'storage/products/'.$book->img_path:"assets/placeholder.jpg") }})"></label>
             <div class="item-details col-12 col-lg-8">
                 <form action="{{url('book', [$book->id])}}" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_method" value="PUT">
