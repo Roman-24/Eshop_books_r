@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Cache;
 
 //use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
 use Session;
 
 class BookController extends Controller
@@ -48,6 +47,13 @@ class BookController extends Controller
 //        ]);
 //        @todo pridat validáciu 2 ??
 
+        // save image to storage
+        if ($request->cover) {
+            $coverImage = Storage::disk('public')->put('products', $request->cover);
+            $request->cover = basename($coverImage);
+        }
+
+
         $book = Book::create([
             'category' => $request->category,
             'tittle' => $request->tittle,
@@ -55,7 +61,7 @@ class BookController extends Controller
             'author' => $request->author,
             'publish_date' => $request->publish_date,
             'price' => $request->price,
-            'img_path' => $request->img_path,
+            'img_path' => $request->cover
         ]);
 
         return redirect('/book/' . $book->id);
