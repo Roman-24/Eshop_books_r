@@ -50,3 +50,19 @@ window.onload = function () {
         }
     }
 }
+
+function previewCoverImage() {
+    var preview = document.querySelector('.preview-book .image');
+    var file = document.querySelector('.preview-book input[type=file]').files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+        preview.style = "background-image: url(" + reader.result + ")";
+    }
+
+    if (file) {
+        reader.readAsDataURL(file);
+    } else {
+        preview.style = "background-image: url()";
+    }
+}

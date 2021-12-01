@@ -29,7 +29,7 @@
                     @endif
                     <button type="submit" class="btn btn-primary">Uložiť zmeny</button>
                     <label for="cover" class="btn btn-secondary">Zmeniť fotku knihy</label>
-                    <input id="cover" name="cover" style="visibility:hidden;" type="file">
+                    <input id="cover" name="cover" style="visibility:hidden;" type="file" onchange="previewCoverImage()">
                 </form>
 
                 <form action="{{url('book', [$book->id])}}" method="POST">
