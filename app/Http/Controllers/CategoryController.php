@@ -70,7 +70,7 @@ class CategoryController extends Controller
 
         $category = Category::find($id);
 
-        return view('layout.pages.products')->with("title", ("Knihy z kategórie: " . $category->name))->with("books", $books)->with("categories", Category::all());
+        return view('layout.pages.products')->with("title", ($category->name))->with("books", $books)->with("categories", Category::all());
     }
 
     /**

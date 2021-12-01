@@ -221,6 +221,10 @@ aside nav {
     font-weight: bold;
 }
 
+.block .btn {
+    white-space: nowrap;
+}
+
 .book-item {
     margin: 15px 0;
     transition: .2s;

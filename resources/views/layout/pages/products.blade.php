@@ -7,19 +7,16 @@
     <div class="block">
         {{-- HEAD OF BLOCK --}}
         <div class="row m-0 category-selected">
-            <div class="col-9">
+            <div class="col-12 col-lg-9">
                 @auth
                     @if(Auth::user()->hasRole("ADMIN"))
-                        <div class="col-3 ">
-                            {{--                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new-book">Pridať knihu do kategórie</button>--}}
-                            <a class="btn btn-warning" href="{{route('book.create')}}">Pridať knihu do kategórie</a>
-                        </div>
+                        <a class="btn btn-warning float-left mr-5" href="{{route('book.create')}}">Pridať knihu do kategórie</a>
                     @endif
                 @endauth
-                <h2>{{$title}}</h2>
+                <h2 class="float-left">{{$title}}</h2>
             </div>
-            <div class="col-3 ">
-                <select class="form-select sort-selection" aria-label="Default select example" id="sorter">
+            <div class="col-12 col-lg-3 mt-2 mt-lg-0">
+                <select class="form-select sort-selection " aria-label="Default select example" id="sorter">
                     <option value="">Zoradiť výsledky</option>
                     <option value="descprice">Cena vzostupne</option>
                     <option value="price">Cena zostupne</option>
