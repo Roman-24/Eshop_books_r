@@ -3,7 +3,7 @@
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\OrderController;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -38,11 +38,11 @@ require __DIR__ . '/auth.php';
 Route::post('/search', [CategoryController::class, 'search'])->name('search.store');
 Route::get('/search', [CategoryController::class, 'search'])->name('search.store');
 
-Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
-
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
 Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
 Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
 Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 Route::get('payment', [CartController::class, 'payment'])->name('cart.payment');
+
+Route::resource('order', OrderController::class);
