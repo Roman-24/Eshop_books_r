@@ -41,11 +41,14 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-//        $request->validate([
-//            'title' => 'required|min:3',
-//            'description' => 'required',
-//        ]);
-//        @todo pridat validáciu 2 ??
+        $request->validate([
+//            'category' => 'required',
+            'tittle' => 'required|min:3',
+            'description' => 'required',
+            'author' => 'required|min:2',
+            'publish_date' => 'required',
+            'price' => 'required',
+        ]);
 
         // save image to storage
         if ($request->cover) {
@@ -102,6 +105,15 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
+        $request->validate([
+//            'category' => 'required',
+            'tittle' => 'required|min:3',
+            'description' => 'required',
+            'author' => 'required|min:2',
+            'publish_date' => 'required',
+            'price' => 'required',
+        ]);
+
         // save image to storage
         if ($request->cover) {
             $coverImage = Storage::disk('public')->put('products', $request->cover);

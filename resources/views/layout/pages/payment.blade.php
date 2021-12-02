@@ -30,6 +30,8 @@
             <label for="shipment-method">Spôsob doručenia</label>
             <select class="form-select" name="shipment-method" id="shipment-method">
                 <option value="visa">DHL kurier</option>
+                <option value="visa">UPS kurier</option>
+                <option value="visa">Slovenská pošta</option>
             </select>
 
             <label for="price">Na úhradu s DPH</label>

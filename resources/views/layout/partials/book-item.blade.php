@@ -6,7 +6,7 @@
         <div class="item-details col-10">
             <cite class="book-title">{{$book->tittle}}</cite>
             <div class="book-info">{{$book->author}},
-                <time datetime="{{$book->publish_date}}" title="{{$book->publish_date}}">{{$book->publish_date}}</time>
+                <time datetime="{{$book->publish_date}}" title="{{$book->publish_date}}">{{date('d.m.Y', strtotime($book->publish_date))}}</time>
             </div>
             <p class="book-description">
                 {{$book->description}}
