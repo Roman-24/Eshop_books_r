@@ -51,7 +51,8 @@ window.onload = function () {
     }
 }
 
-function previewCoverImage() {
+// Handling image cover
+function previewCoverImage(e) {
     var preview = document.querySelector('.preview-book .image');
     var file = document.querySelector('.preview-book input[type=file]').files[0];
     var reader = new FileReader();
@@ -65,4 +66,11 @@ function previewCoverImage() {
     } else {
         preview.style = "background-image: url('/assets/placeholder.jpg')";
     }
+}
+
+function removeCoverImage(e) {
+    var preview = document.querySelector('.preview-book .image');
+    document.querySelector('.preview-book input[type=file]').value = '';
+
+    preview.style = "background-image: url('/assets/placeholder.jpg')";
 }

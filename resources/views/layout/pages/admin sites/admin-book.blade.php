@@ -5,7 +5,8 @@
 @section('content')
     <div class="block book-item preview-book">
         <div class="row m-0">
-            <label for="cover" class="image col-12 col-md-4" style="background-image: url({{ asset(strlen($book->img_path)>0?'storage/products/'.$book->img_path:"assets/placeholder.jpg") }})"></label>
+            <label for="cover" class="image col-12 col-md-4"
+                   style="background-image: url({{ asset(strlen($book->img_path)>0?'storage/products/'.$book->img_path:"assets/placeholder.jpg") }})"></label>
             <div class="item-details col-12 col-lg-8">
                 <form action="{{url('book', [$book->id])}}" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_method" value="PUT">
@@ -35,7 +36,8 @@
                 <form action="{{url('book', [$book->id])}}" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="submit" class="btn btn-secondary" value="Vymazať knihu"/>
+                    <input type="submit" class="btn btn-danger" value="Vymazať knihu"/>
+                    <div class="btn btn-secondary mr-2" onclick="removeCoverImage()">Vymazať fotku knížky</div>
                 </form>
             </div>
         </div>

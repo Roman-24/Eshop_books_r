@@ -106,7 +106,7 @@ class BookController extends Controller
         if ($request->cover) {
             $coverImage = Storage::disk('public')->put('products', $request->cover);
             $book->img_path = basename($coverImage);
-        }
+        } else $book->img_path = '';
 
         // save data to database
         $book->tittle = $request->tittle;
