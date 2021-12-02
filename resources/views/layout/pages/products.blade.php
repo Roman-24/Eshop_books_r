@@ -3,7 +3,6 @@
 @section('title', $title)
 
 @section('content')
-
     <div class="block">
         {{-- HEAD OF BLOCK --}}
         <div class="row m-0 category-selected">

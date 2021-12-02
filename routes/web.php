@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layout.pages.homepage')
         ->with('categories', Category::all())
-        ->with('new_books', Book::all()->sortBy('created_at')->take(4));
+        ->with('new_books', Book::all()->sortByDesc('created_at')->take(4));
 });
 
 Route::resource('book', BookController::class);
