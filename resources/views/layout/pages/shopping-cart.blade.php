@@ -39,9 +39,15 @@
                     Spolu: <strong>{{ Cart::getTotal() }}€</strong>
                 </div>
                 <div>
+                    <form action="{{ route('cart.payment') }}" method="GET">
+                        @csrf
+                        <button class="btn btn-secondary">Zaplatiť</button>
+                    </form>
+                </div>
+                <div>
                     <form action="{{ route('cart.clear') }}" method="POST">
                         @csrf
-                        <button class="basket-remove-all btn btn-secondary">Remove All Cart</button>
+                        <button class="basket-remove-all btn btn-secondary">Odobrať všetko</button>
                     </form>
                 </div>
             @endif

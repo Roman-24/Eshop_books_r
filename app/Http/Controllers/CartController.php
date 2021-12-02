@@ -64,4 +64,10 @@ class CartController extends Controller
 
         return redirect()->route('cart.list');
     }
+
+    public function payment()
+    {
+        $totalCArtPrice = \Cart::getSubTotal();
+        return view('layout.pages.payment', compact('totalCArtPrice'));
+    }
 }

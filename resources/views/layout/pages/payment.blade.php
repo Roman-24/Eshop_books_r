@@ -33,7 +33,7 @@
             </select>
 
             <label for="price">Na úhradu s DPH</label>
-            <input disabled class="form-control" id="price" value="100 €" type="text"/>
+            <input disabled class="form-control" id="price" value="{{$totalCArtPrice}} €" type="text"/>
 
             <div class="text-center">
                 <!-- INPUT aby sa posielal dotaz na php-->
