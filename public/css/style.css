@@ -18,6 +18,15 @@
     border: none;
 }
 
+.input-quantity {
+    border: none;
+    white-space: nowrap;
+    margin: 10px 0px;
+    margin-left: 10px;
+    max-width: 100px;
+    float: right;
+}
+
 .page-link {
     color: var(--link-color);
     text-decoration: underline;

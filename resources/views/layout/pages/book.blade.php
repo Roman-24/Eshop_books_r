@@ -30,12 +30,11 @@
                     <input type="hidden" value="{{ $book->tittle }}" name="name">
                     <input type="hidden" value="{{ $book->price }}" name="price">
                     <input type="hidden" value="{{ $book->img_path }}" name="image">
-                    <input type="hidden" value="1" name="quantity">
+                    <input type="number" id="quantity" name="quantity" class="form-control input-number input-quantity" value="{{ is_null($book->quantity) ?? 1 }}" min="1" max="100">
                     <button class="btn btn-primary">Pridať do košíka</button>
                 </form>
             </div>
         </div>
     </div>
-
     @include('layout.partials.blocks', ['tittle'=>"Podobné knihy", 'items'=>$similar_books])
 @stop

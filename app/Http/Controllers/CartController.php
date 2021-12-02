@@ -67,7 +67,7 @@ class CartController extends Controller
 
     public function payment()
     {
-        $totalCArtPrice = \Cart::getSubTotal();
+        $totalCArtPrice = \Cart::getTotal();
         return view('layout.pages.payment', compact('totalCArtPrice'));
     }
 }

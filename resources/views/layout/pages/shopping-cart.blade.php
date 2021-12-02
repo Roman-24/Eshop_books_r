@@ -36,7 +36,7 @@
                 </div>
             @else
                 <div class="total-price">
-                    Spolu: <strong>{{ Cart::getTotal() }}€</strong>
+                    Spolu: <strong>{{ Cart::getSubTotal() }}€</strong>
                 </div>
                 <div>
                     <form action="{{ route('cart.payment') }}" method="GET">
