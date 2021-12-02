@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
-    var $booksPerPage = 2;
+    var $booksPerPage = 10;
 
     /**
      * Display a listing of the resource.
@@ -65,7 +65,7 @@ class CategoryController extends Controller
                 $books = $books->orderBy($sort, "asc")->paginate(2);
             }
         } else {
-            $books = $books->paginate(2);
+            $books = $books->paginate($this->booksPerPage);
         }
 
         $category = Category::find($id);
