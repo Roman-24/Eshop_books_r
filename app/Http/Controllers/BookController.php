@@ -19,7 +19,20 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::paginate(10);
+        $booksPerPage = 10;
+        $books = Book::query();
+
+        $sort = $_GET["sort"] ?? null;
+        if ($sort) {
+            if (substr($sort, 0, 4) === "desc") {
+                $books = $books->orderBy(substr($sort, 4), "desc")->paginate($booksPerPage);
+            } else {
+                $books = $books->orderBy($sort, "asc")->paginate($booksPerPage);
+            }
+        } else {
+            $books = $books->paginate($booksPerPage);
+        }
+
         return view('layout.pages.products', compact('books', $books))->with("categories", Category::all())->with("title", "Všetky produkty");
     }
 

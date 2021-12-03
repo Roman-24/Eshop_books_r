@@ -60,9 +60,9 @@ class CategoryController extends Controller
         $sort = $_GET["sort"] ?? null;
         if ($sort) {
             if (substr($sort, 0, 4) === "desc") {
-                $books = $books->orderBy(substr($sort, 4), "desc")->paginate(2);
+                $books = $books->orderBy(substr($sort, 4), "desc")->paginate($this->booksPerPage);
             } else {
-                $books = $books->orderBy($sort, "asc")->paginate(2);
+                $books = $books->orderBy($sort, "asc")->paginate($this->booksPerPage);
             }
         } else {
             $books = $books->paginate($this->booksPerPage);
