@@ -12,7 +12,8 @@
             @foreach ($cartItems as $book)
                 <div class="book-item basket-item row m-0">
                     <div class="col-12 col-lg-12 basket-actions">
-                        <img src="{{ asset(strlen($book->attributes->image)>0?'storage/products/'.$book->attributes->image:"assets/placeholder.jpg") }}" alt="{{$book->name}}"
+                        <img src="{{ asset(strlen($book->attributes->image)>0?'storage/products/'.$book->attributes->image:"assets/placeholder.jpg") }}"
+                             alt="{{$book->name}}"
                              class="basket-image">
                         <a href="/book/{{$book->id}}" class="book-title">{{$book->name}}</a>
                         <div class="book-price">{{$book->price}}€</div>
@@ -39,18 +40,14 @@
                 <div class="total-price">
                     Spolu: <strong>{{ Cart::getSubTotal() }}€</strong>
                 </div>
-                <div>
-                    <form action="{{ route('cart.payment') }}" method="GET">
-                        @csrf
-                        <button class="btn btn-secondary">Zaplatiť</button>
-                    </form>
-                </div>
-                <div>
-                    <form action="{{ route('cart.clear') }}" method="POST">
-                        @csrf
-                        <button class="basket-remove-all btn btn-secondary">Odobrať všetko</button>
-                    </form>
-                </div>
+                <form class="button-form mr-5" action="{{ route('cart.payment') }}" method="GET">
+                    @csrf
+                    <button class="btn btn-primary">Zaplatiť</button>
+                </form>
+                <form class="button-form" action="{{ route('cart.clear') }}" method="POST">
+                    @csrf
+                    <button class="basket-remove-all btn btn-secondary">Odobrať všetko</button>
+                </form>
             @endif
         </div>
     </div>
