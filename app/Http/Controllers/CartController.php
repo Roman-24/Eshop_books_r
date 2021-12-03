@@ -100,7 +100,7 @@ class CartController extends Controller
     {
         if (Auth::check()) {
             $totalCArtPrice = UserCart::where('user_id', Auth::user()->id)->get();
-            $totalCArtPrice = $totalCArtPrice->shoum(function($t){
+            $totalCArtPrice = $totalCArtPrice->sum(function($t){
                 return $t->price * $t->quantity;
             });
         } else
