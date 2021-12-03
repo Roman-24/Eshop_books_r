@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserCart;
-use App\User;
-use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -18,21 +17,22 @@ class CartController extends Controller
             $cartItems = \Cart::getContent();
         }
         // dd($cartItems);
-        return view('layout.pages.shopping-cart', compact('cartItems'))->with("totalPrice", $cartItems->sum('price'));
+        return view('layout.pages.shopping-cart', compact('cartItems'))->with("totalPrice", $cartItems->sum(function($t){
+            return $t->price * $t->quantity;
+        }));
     }
 
 
     public function addToCart(Request $request)
     {
         if (Auth::check()) {
-            UserCart::create([
+            UserCart::updateOrCreate([
                 'id' => $request->id,
                 'user_id' => Auth::user()->id,
                 'name' => $request->name,
                 'price' => $request->price,
-                'quantity' => $request->quantity,
                 'image' => $request->cover
-            ]);
+            ], ['quantity' => $request->quantity]);
         } else
             \Cart::add([
                 'id' => $request->id,
@@ -98,7 +98,11 @@ class CartController extends Controller
 
     public function payment()
     {
-        $totalCArtPrice = \Cart::getTotal();
+        if (Auth::check()) {
+            $totalCArtPrice = UserCart::where('user_id', Auth::user()->id)->get();
+            $totalCArtPrice = $totalCArtPrice->sum("price");
+        } else
+            $totalCArtPrice = \Cart::getTotal();
         return view('layout.pages.payment', compact('totalCArtPrice'));
     }
 }

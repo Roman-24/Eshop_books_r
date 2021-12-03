@@ -8,7 +8,8 @@
                 <form action="{{ route("search.store") }}" method="POST">
                 @csrf <!-- {{ csrf_field() }} -->
                     <div class="input-group">
-                        <input name="tittle" type="search" class="form-control" placeholder="Vyhľadať poďla názvu knihy" aria-label="Search"
+                        <input name="tittle" type="search" class="form-control" placeholder="Vyhľadať poďla názvu knihy"
+                               aria-label="Search"
                                aria-describedby="search-addon"/>
                         <button type="submit" class="input-group-text border-0" id="search-addon">
                             <i class="fas fa-search"></i>
@@ -22,18 +23,17 @@
                     @if(Auth::user()->hasRole("ADMIN"))
                         <a class="btn btn-secondary" href="/book"><i class="fas fa-book"></i></a>
                     @endif
-                    <!-- Authentication -->
+                <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a class="btn btn-secondary" href="route('logout')"
-                           onclick="event.preventDefault();
-                                            this.closest('form').submit();">
+                           onclick="event.preventDefault(); this.closest('form').submit();">
                             <i class="fas fa-sign-out-alt"></i>
                         </a>
                     </form>
                     <a class="btn btn-secondary" href="{{route('cart.list')}}">
                         <i class="fas fa-shopping-cart"></i>
-                        @if(!Cart::isEmpty())
+                        @if(!Auth::check() && !Cart::isEmpty())
                             <span class="badge badge-light">{{ Cart::getTotalQuantity() }}</span>
                         @endif
                     </a>
