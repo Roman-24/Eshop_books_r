@@ -55,6 +55,7 @@ window.onload = function () {
 function previewCoverImage(e) {
     var preview = document.querySelector('.preview-book .image');
     var file = document.querySelector('.preview-book input[type=file]').files[0];
+    document.querySelector('#coverRemoved').value = "false";
     var reader = new FileReader();
 
     reader.onloadend = function () {
@@ -70,7 +71,7 @@ function previewCoverImage(e) {
 
 function removeCoverImage(e) {
     var preview = document.querySelector('.preview-book .image');
-    document.querySelector('.preview-book input[type=file]').value = '';
+    document.querySelector('#coverRemoved').value = "true";
 
     preview.style = "background-image: url('/assets/placeholder.jpg')";
 }

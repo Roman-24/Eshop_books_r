@@ -105,7 +105,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        return view('layout.pages.admin sites.admin-book', compact('book', $book))
+        return view('layout.pages.admin-sites.admin-book', compact('book', $book))
             ->with("categories", Category::all());
     }
 
@@ -131,7 +131,10 @@ class BookController extends Controller
         if ($request->cover) {
             $coverImage = Storage::disk('public')->put('products', $request->cover);
             $book->img_path = basename($coverImage);
-        } else $book->img_path = '';
+        }
+        if ($request->cover_removed == "true") {
+            $book->img_path = "";
+        }
 
         // save data to database
         $book->tittle = $request->tittle;

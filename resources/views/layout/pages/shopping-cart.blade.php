@@ -12,7 +12,7 @@
             @foreach ($cartItems as $book)
                 <div class="book-item basket-item row m-0">
                     <div class="col-12 col-lg-12 basket-actions">
-                        <img src="assets/products/{{ $book->attributes->image }}" alt="{{$book->name}}" class="basket-image">
+                        <img src="{{ asset(strlen($book->cover)>0?'storage/products/'.$book->cover:"assets/placeholder.jpg") }}" alt="{{$book->name}}" class="basket-image">
                         <a href="/book/{{$book->id}}" class="book-title">{{$book->name}}</a>
                         <div class="book-price">{{$book->price}}€</div>
                         <form action="{{ route('cart.update') }}" method="POST">

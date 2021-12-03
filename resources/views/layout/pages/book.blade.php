@@ -29,9 +29,9 @@
                     <input type="hidden" value="{{ $book->id }}" name="id">
                     <input type="hidden" value="{{ $book->tittle }}" name="name">
                     <input type="hidden" value="{{ $book->price }}" name="price">
-                    <input type="hidden" value="{{ $book->img_path }}" name="image">
-                    <input type="number" id="quantity" name="quantity" class="form-control input-number input-quantity" value="{{ is_null($book->quantity) ?? 1 }}" min="1" max="100">
+                    <input type="hidden" value="{{ $book->img_path }}" name="cover">
                     <button class="btn btn-primary">Pridať do košíka</button>
+                    <input type="number" id="quantity" name="quantity" class="form-control input-number input-quantity" value="{{ is_null($book->quantity) ?? 1 }}" min="1" max="100">
                 </form>
             </div>
         </div>
