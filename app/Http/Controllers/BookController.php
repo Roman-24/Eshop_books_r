@@ -55,7 +55,6 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-//            'category' => 'required',
             'tittle' => 'required|min:3',
             'description' => 'required',
             'author' => 'required|min:2',
@@ -68,7 +67,6 @@ class BookController extends Controller
             $coverImage = Storage::disk('public')->put('products', $request->cover);
             $request->cover = basename($coverImage);
         }
-
 
         $book = Book::create([
             'category' => $request->category,

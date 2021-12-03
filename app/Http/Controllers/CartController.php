@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserCart;
+use App\User;
+use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     public function cartList()
     {
-        $cartItems = \Cart::getContent();
+        $cartItems = [];
+        if (Auth::check()) {
+            $cartItems = UserCart::where('user_id', Auth::user()->id)->get();
+        } else {
+            $cartItems = \Cart::getContent();
+        }
         // dd($cartItems);
         return view('layout.pages.shopping-cart', compact('cartItems'));
     }
@@ -16,15 +25,25 @@ class CartController extends Controller
 
     public function addToCart(Request $request)
     {
-        \Cart::add([
-            'id' => $request->id,
-            'name' => $request->name,
-            'price' => $request->price,
-            'quantity' => $request->quantity,
-            'attributes' => array(
-                'image' => $request->cover,
-            )
-        ]);
+        if (Auth::check()) {
+            UserCart::create([
+                'id' => $request->id,
+                'user_id' => Auth::user()->id,
+                'name' => $request->name,
+                'price' => $request->price,
+                'quantity' => $request->quantity,
+                'image' => $request->cover
+            ]);
+        } else
+            \Cart::add([
+                'id' => $request->id,
+                'name' => $request->name,
+                'price' => $request->price,
+                'quantity' => $request->quantity,
+                'attributes' => array(
+                    'image' => $request->cover,
+                )
+            ]);
 
         session()->flash('success', 'Položka bola úspešne pridaná!');
 
@@ -33,15 +52,22 @@ class CartController extends Controller
 
     public function updateCart(Request $request)
     {
-        \Cart::update(
-            $request->id,
-            [
-                'quantity' => [
-                    'relative' => false,
-                    'value' => $request->quantity
-                ],
-            ]
-        );
+        if (Auth::check()) {
+            UserCart::where('id', $request->id)->update(
+                [
+                    'quantity' => $request->quantity
+                ]
+            );
+        } else
+            \Cart::update(
+                $request->id,
+                [
+                    'quantity' => [
+                        'relative' => false,
+                        'value' => $request->quantity
+                    ],
+                ]
+            );
 
         session()->flash('success', 'Položka bola úspešne upravená!');
 
@@ -50,7 +76,10 @@ class CartController extends Controller
 
     public function removeCart(Request $request)
     {
-        \Cart::remove($request->id);
+        if (Auth::check()) {
+            UserCart::where('id', $request->id)->delete();
+        } else
+            \Cart::remove($request->id);
         session()->flash('success', 'Položka bola úspešne odobraná!');
 
         return redirect()->route('cart.list');
@@ -58,7 +87,10 @@ class CartController extends Controller
 
     public function clearAllCart()
     {
-        \Cart::clear();
+        if (Auth::check()) {
+            UserCart::where('user_id', Auth::user()->id)->delete();
+        } else
+            \Cart::clear();
 
         session()->flash('success', 'Všetky položky boli úspešne odobrané!');
 
