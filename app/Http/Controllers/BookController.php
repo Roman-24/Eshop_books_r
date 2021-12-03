@@ -43,7 +43,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('layout.pages.admin sites.create-book')->with("categories", Category::all());
+        return view('layout.pages.admin-sites.create-book')->with("categories", Category::all());
     }
 
     /**

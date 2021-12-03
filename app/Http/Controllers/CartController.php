@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\UserCart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -16,7 +15,7 @@ class CartController extends Controller
         } else {
             $cartItems = \Cart::getContent();
         }
-        // dd($cartItems);
+
         return view('layout.pages.shopping-cart', compact('cartItems'))->with("totalPrice", $cartItems->sum(function($t){
             return $t->price * $t->quantity;
         }));
