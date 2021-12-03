@@ -1,4 +1,4 @@
-@extends('layout.app_light2')
+@extends('layout.app_light')
 @section('title', "Objednávka")
 @section('content')
     <section class="block text-center">

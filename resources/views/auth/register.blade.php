@@ -1,4 +1,4 @@
-@extends('layout.app_light')
+@extends('layout.login_layout')
 @section('title', "Registrácia")
 @section('content')
     <x-auth-card>

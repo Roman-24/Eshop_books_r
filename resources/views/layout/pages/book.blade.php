@@ -36,5 +36,5 @@
             </div>
         </div>
     </div>
-    @include('layout.partials.blocks', ['tittle'=>"Podobné knihy", 'items'=>$similar_books])
+    @include('layout.partials.books-list', ['tittle'=>"Podobné knihy", 'items'=>$similar_books])
 @stop

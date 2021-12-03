@@ -1,4 +1,4 @@
-@extends('layout.app_light2')
+@extends('layout.app_light')
 @section('title', "Nákupný košík")
 @section('content')
     <div class="block clearfix">

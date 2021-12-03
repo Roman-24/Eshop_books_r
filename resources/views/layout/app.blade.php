@@ -22,9 +22,7 @@
 </footer>
 
 <!-- MODALS -->
-{{--@include('layout.modals.login')--}}
-{{--@include('layout.modals.register')--}}
-@include('layout.modals.advance_search')
+@include('layout.partials.advance_search')
 
 </body>
 </html>
