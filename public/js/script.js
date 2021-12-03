@@ -30,6 +30,8 @@ window.onbeforeunload = function () {
 }
 
 window.onload = function () {
+    if (document.getElementById("tittle") === null)
+        return;
     var tittle = sessionStorage.getItem("tittle");
     if (tittle !== null) document.getElementById("tittle").value = tittle
 
