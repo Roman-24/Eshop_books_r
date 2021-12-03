@@ -19,8 +19,8 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::all();
-        return view('layout.pages.products', compact('books', $books));
+        $books = Book::paginate(10);
+        return view('layout.pages.products', compact('books', $books))->with("categories", Category::all())->with("title", "Všetky produkty");
     }
 
     /**

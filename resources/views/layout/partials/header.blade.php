@@ -19,6 +19,9 @@
             <div class="col-12 col-md-3 buttons">
                 @auth
                     <div class="user-name"><i class="fas fa-user"></i>{{ Auth::user()->name }}</div>
+                    @if(Auth::user()->hasRole("ADMIN"))
+                        <a class="btn btn-secondary" href="/book"><i class="fas fa-book"></i></a>
+                    @endif
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
