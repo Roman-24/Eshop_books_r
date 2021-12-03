@@ -12,14 +12,13 @@ class CartController extends Controller
 {
     public function cartList()
     {
-        $cartItems = [];
         if (Auth::check()) {
             $cartItems = UserCart::where('user_id', Auth::user()->id)->get();
         } else {
             $cartItems = \Cart::getContent();
         }
         // dd($cartItems);
-        return view('layout.pages.shopping-cart', compact('cartItems'));
+        return view('layout.pages.shopping-cart', compact('cartItems'))->with("totalPrice", $cartItems->sum('price'));
     }
 
 

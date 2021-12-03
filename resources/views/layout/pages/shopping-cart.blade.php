@@ -38,13 +38,13 @@
                     </div>
                 </div>
             @endforeach
-            @if(Cart::isEmpty())
+            @if(Auth::check() && $totalPrice==0 || Cart::isEmpty())
                 <div class="p-3 mb-3 rounded text-center">
                     <p>Košík je prázdny :/</p>
                 </div>
             @else
                 <div class="total-price">
-                    Spolu: <strong>{{ Cart::getSubTotal() }}€</strong>
+                    Spolu: <strong>{{ $totalPrice }}€</strong>
                 </div>
                 <form class="button-form mr-5" action="{{ route('cart.payment') }}" method="GET">
                     @csrf
