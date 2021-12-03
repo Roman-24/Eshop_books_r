@@ -93,7 +93,7 @@ class BookController extends Controller
     {
         return view('layout.pages.book', compact('book', $book))
             ->with("categories", Category::all())
-            ->with('similar_books', Book::where('category', $book->category)->get());
+            ->with('similar_books', Book::all()->where('category', $book->category)->take(5));
     }
 
 
