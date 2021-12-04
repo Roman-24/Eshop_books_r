@@ -44,11 +44,21 @@ class OrderController extends Controller
             'city' => 'required',
             'psc' => 'required|min:5|max:6',
             'email' => 'required|email',
-            'paytment-type' => 'required',
-            'shipment-method' => 'required',
+            'paytment_type' => 'required',
+            'shipment_method' => 'required',
         ]);
 
         \Cart::clear();
+        Order::create([
+            'name' => $request->name,
+            'address' => $request->address,
+            'city' => $request->city,
+            'psc' => $request->psc,
+            'email' => $request->email,
+            'paytment_type' => $request->paytment_type,
+            'shipment_method' => $request->shipment_method,
+            'price' => $request->price
+        ]);
         return redirect('/');
     }
 
