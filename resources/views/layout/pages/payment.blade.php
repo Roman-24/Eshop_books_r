@@ -33,14 +33,14 @@
 
             <!--- Roll down selection --->
             <label for="paytment-type">Spôsob platby</label>
-            <select class="form-select" name="paytment-type" id="paytment-type">
+            <select class="form-select" name="paytment_type" id="paytment-type">
                 <option value="visa">Visa</option>
                 <option value="mastercard">Master Card</option>
                 <option value="cash-on-delivery">Dobierka</option>
             </select>
 
             <label for="shipment-method">Spôsob doručenia</label>
-            <select class="form-select" name="shipment-method" id="shipment-method">
+            <select class="form-select" name="shipment_method" id="shipment-method">
                 <option value="visa">DHL kurier</option>
                 <option value="visa">UPS kurier</option>
                 <option value="visa">Slovenská pošta</option>
