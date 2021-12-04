@@ -38,7 +38,7 @@
                     </div>
                 </div>
             @endforeach
-            @if(Auth::check() && $totalPrice==0 || Cart::isEmpty())
+            @if((Auth::check() && $totalPrice==0) || (!Auth::check() && Cart::isEmpty()))
                 <div class="p-3 mb-3 rounded text-center">
                     <p>Košík je prázdny :/</p>
                 </div>
