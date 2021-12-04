@@ -26,7 +26,8 @@ class BookSeeder extends Seeder
                 'publish_date' => Carbon::today()->subDay(random_int(0, 9999)),
                 'price' => random_int(10, 140),
                 'description' => Str::random(random_int(156, 500)),
-                'img_path' => 'book'.$x.'jpg',
+                'img_path' => 'book'.$x.'.jpg',
+                'created_at' => Carbon::now()
             ]);
         }
     }
