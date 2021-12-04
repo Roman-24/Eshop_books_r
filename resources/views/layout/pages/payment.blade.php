@@ -47,7 +47,7 @@
             </select>
 
             <label for="price">Na úhradu s DPH</label>
-            <input disabled class="form-control" id="price" value="{{$totalCArtPrice}} €" type="text" name="price"/>
+            <input readonly class="form-control" id="price" value="{{$totalCArtPrice}} €" type="text" name="price"/>
 
             <button class="btn btn-secondary text-center">Zaplatiť a objednať</button>
         </form>

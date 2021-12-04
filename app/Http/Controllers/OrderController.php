@@ -65,7 +65,7 @@ class OrderController extends Controller
             'email' => $request->email,
             'paytment_type' => $request->paytment_type,
             'shipment_method' => $request->shipment_method,
-            'price' => $request->price
+            'price' => $request->price,
         ]);
         return redirect('/');
     }
