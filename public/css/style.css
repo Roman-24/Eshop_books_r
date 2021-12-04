@@ -414,6 +414,7 @@ aside nav {
 .book-item .book-description {
     margin-top: 4px;
     margin-bottom: 0;
+    overflow-wrap: anywhere;
 }
 
 .book-item .book-price {
