@@ -16,7 +16,7 @@ class CartController extends Controller
             $cartItems = \Cart::getContent();
         }
 
-        return view('layout.pages.shopping-cart', compact('cartItems'))->with("totalPrice", $cartItems->sum(function($t){
+        return view('layout.pages.shopping-cart', compact('cartItems'))->with("totalPrice", $cartItems->sum(function ($t) {
             return $t->price * $t->quantity;
         }));
     }
@@ -30,7 +30,7 @@ class CartController extends Controller
                 'user_id' => Auth::user()->id,
                 'name' => $request->name,
                 'price' => $request->price,
-                'image' => $request->cover
+                'image' => $request->cover ? $request->cover : "",
             ], ['quantity' => $request->quantity]);
         } else
             \Cart::add([
@@ -99,7 +99,7 @@ class CartController extends Controller
     {
         if (Auth::check()) {
             $totalCArtPrice = UserCart::where('user_id', Auth::user()->id)->get();
-            $totalCArtPrice = $totalCArtPrice->sum(function($t){
+            $totalCArtPrice = $totalCArtPrice->sum(function ($t) {
                 return $t->price * $t->quantity;
             });
         } else
