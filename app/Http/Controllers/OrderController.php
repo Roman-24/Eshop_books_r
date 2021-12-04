@@ -46,6 +46,7 @@ class OrderController extends Controller
             'email' => 'required|email',
             'paytment_type' => 'required',
             'shipment_method' => 'required',
+            'price' => 'required',
         ]);
 
         \Cart::clear();
@@ -57,7 +58,7 @@ class OrderController extends Controller
             'email' => $request->email,
             'paytment_type' => $request->paytment_type,
             'shipment_method' => $request->shipment_method,
-            'price' => $request->price
+            'price' => $request->price,
         ]);
         return redirect('/');
     }
