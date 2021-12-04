@@ -10,8 +10,8 @@
                 <label for="tittle">Názov knihy</label>
                 <input name="tittle" class="form-control" id="tittle" placeholder="Názov knihy" type="text"/>
 
-                <label for="author">Autor</label>
-                <input name="author" class="form-control" id="author" placeholder="Autor" type="text"/>
+                <label for="author">Autor knihy</label>
+                <input name="author" class="form-control" id="author" placeholder="Autor knihy" type="text"/>
 
                 <label for="maxprice">Maximálna cena</label>
                 <input name="maxprice" class="form-control" id="maxprice" placeholder="Maximálna cena" type="number"/>
