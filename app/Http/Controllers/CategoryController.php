@@ -134,4 +134,23 @@ class CategoryController extends Controller
 
         return view('layout.pages.products')->with("title", "Vyhľadávanie")->with("books", $books)->with("categories", Category::all());
     }
+
+    public function searchAll(Request $request)
+    {
+        $books = Book::query();
+
+        $books = $books->where(DB::raw('lower(tittle)'), "like", "%" . strtolower($request->get('input')) . "%")
+            ->orWhere(DB::raw('lower(author)'), "like", "%" . strtolower($request->get('input')) . "%");
+
+        $sort = $_GET["sort"] ?? null;
+        if ($sort) {
+            if (substr($sort, 0, 4) === "desc")
+                $books = $books->orderBy(substr($sort, 4), "desc");
+            else
+                $books = $books->orderBy($sort, "asc");
+        }
+        $books = $books->get();
+
+        return view('layout.pages.products')->with("title", "Vyhľadávanie")->with("books", $books)->with("categories", Category::all());
+    }
 }

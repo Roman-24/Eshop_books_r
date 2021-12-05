@@ -5,10 +5,10 @@
                 <img src="{{ asset('assets/logo.svg') }}" alt="Logo">
             </a>
             <div class="col-12 col-md-6">
-                <form action="{{ route("search.store") }}" method="POST">
+                <form action="{{ route("searchAll.store") }}" method="POST">
                 @csrf <!-- {{ csrf_field() }} -->
                     <div class="input-group">
-                        <input name="tittle" type="search" class="form-control" placeholder="Vyhľadať poďla názvu knihy"
+                        <input name="input" type="search" class="form-control" placeholder="Vyhľadať podľa názvu knihy alebo autora"
                                aria-label="Search"
                                aria-describedby="search-addon"/>
                         <button type="submit" class="input-group-text border-0" id="search-addon">
