@@ -11,10 +11,13 @@
         <div class="collapse navbar-collapse" id="asideNav">
             <ul>
                 @foreach ($categories as $category)
-                    <li class="category"><a href="/category/{{$category->id}}" title="{{$category->name}}">{{$category->name}}</a></li>
+                    <li class="category"><a href="/category/{{$category->id}}"
+                                            title="{{$category->name}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </div>
-        <button class="btn btn-secondary mobile-hide" data-bs-toggle="modal" data-bs-target="#advanced-search">Pokročilé hľadanie</button>
+        <button class="btn btn-secondary mobile-hide" data-bs-toggle="modal" data-bs-target="#advanced-search">Pokročilé
+            hľadanie
+        </button>
     </nav>
 </aside>

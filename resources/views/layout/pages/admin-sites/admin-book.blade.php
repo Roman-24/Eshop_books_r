@@ -9,6 +9,7 @@
                    style="background-image: url({{ asset(strlen($book->img_path)>0?'storage/products/'.$book->img_path:"assets/placeholder.jpg") }})"></label>
             <div class="item-details col-12 col-lg-8">
                 <form action="{{url('book', [$book->id])}}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <input type="hidden" name="_method" value="PUT">
                     {{ csrf_field() }}
 
@@ -35,6 +36,7 @@
                 </form>
 
                 <form action="{{url('book', [$book->id])}}" method="POST">
+                    @csrf
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="submit" class="btn btn-danger" value="Vymazať knihu"/>

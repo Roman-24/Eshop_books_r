@@ -13,13 +13,15 @@
                 <div class="book-item basket-item row m-0">
                     <div class="col-12 col-lg-12 basket-actions">
                         @if(Auth::check())
-                            <img src="{{ asset(strlen($book->image)>0?'storage/products/'.$book->image:"assets/placeholder.jpg") }}"
-                                 alt="{{$book->name}}"
-                                 class="basket-image">
+                            <img
+                                src="{{ asset(strlen($book->image)>0?'storage/products/'.$book->image:"assets/placeholder.jpg") }}"
+                                alt="{{$book->name}}"
+                                class="basket-image">
                         @else
-                            <img src="{{ asset(strlen($book->attributes->image)>0?'storage/products/'.$book->attributes->image:"assets/placeholder.jpg") }}"
-                                 alt="{{$book->name}}"
-                                 class="basket-image">
+                            <img
+                                src="{{ asset(strlen($book->attributes->image)>0?'storage/products/'.$book->attributes->image:"assets/placeholder.jpg") }}"
+                                alt="{{$book->name}}"
+                                class="basket-image">
                         @endif
                         <a href="/book/{{$book->id}}" class="book-title">{{$book->name}}</a>
                         <div class="book-price">{{$book->price}}€</div>
