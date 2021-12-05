@@ -15,11 +15,12 @@
                         @if(Auth::check())
                             <div class="basket-image"
                                  style="background-image: url({{ asset(strlen($book->image)>0?'storage/products/'.$book->image:"assets/placeholder.jpg") }})"></div>
+                            <a href="/book/{{$book->book_id}}" class="book-title">{{$book->name}}</a>
                         @else
                             <div class="basket-image"
                                  style="background-image: url({{ asset(strlen($book->attributes->image)>0?'storage/products/'.$book->attributes->image:"assets/placeholder.jpg") }})"></div>
+                            <a href="/book/{{$book->id}}" class="book-title">{{$book->name}}</a>
                         @endif
-                        <a href="/book/{{$book->id}}" class="book-title">{{$book->name}}</a>
                         <div class="book-price">{{$book->price}}€</div>
                         <form action="{{ route('cart.update') }}" method="POST">
                             @csrf
