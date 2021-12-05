@@ -241,6 +241,10 @@ aside nav {
     display: block;
 }
 
+.book-item a {
+    color: inherit;
+}
+
 @media only screen and (max-width: 992px) {
     .books-list .book-item {
         font-size: .9em;
