@@ -43,7 +43,12 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('layout.pages.admin-sites.create-book')->with("categories", Category::all());
+        if(Auth::user()->hasRole("ADMIN")) {
+            return view('layout.pages.admin-sites.create-book')->with("categories", Category::all());
+        }
+        else {
+            return abort(404);
+        }
     }
 
     /**
@@ -103,8 +108,13 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        return view('layout.pages.admin-sites.admin-book', compact('book', $book))
-            ->with("categories", Category::all());
+        if(Auth::user()->hasRole("ADMIN")){
+            return view('layout.pages.admin-sites.admin-book', compact('book', $book))
+                ->with("categories", Category::all());
+        }
+        else {
+            return abort(404);
+        }
     }
 
     /**
