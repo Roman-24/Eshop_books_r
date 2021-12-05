@@ -25,13 +25,12 @@ class CartController extends Controller
     public function addToCart(Request $request)
     {
         if (Auth::check()) {
-            UserCart::updateOrCreate([
-                'id' => $request->id,
+            UserCart::create([
                 'user_id' => Auth::user()->id,
                 'name' => $request->name,
                 'price' => $request->price,
                 'image' => $request->cover ? $request->cover : "",
-            ], ['quantity' => $request->quantity]);
+                'quantity' => $request->quantity]);
         } else
             \Cart::add([
                 'id' => $request->id,
