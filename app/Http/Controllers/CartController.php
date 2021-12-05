@@ -25,12 +25,14 @@ class CartController extends Controller
     public function addToCart(Request $request)
     {
         if (Auth::check()) {
-            UserCart::create([
+            UserCart::updateOrCreate([
+                'book_id' => $request->id,
                 'user_id' => Auth::user()->id,
+
+            ], ['quantity' => $request->quantity,
                 'name' => $request->name,
                 'price' => $request->price,
-                'image' => $request->cover ? $request->cover : "",
-                'quantity' => $request->quantity]);
+                'image' => $request->cover ? $request->cover : "",]);
         } else
             \Cart::add([
                 'id' => $request->id,
@@ -50,7 +52,7 @@ class CartController extends Controller
     public function updateCart(Request $request)
     {
         if (Auth::check()) {
-            UserCart::where('id', $request->id)->update(
+            UserCart::where('book_id', $request->id)->where('user_id', Auth::user()->id)->update(
                 [
                     'quantity' => $request->quantity
                 ]
@@ -74,7 +76,7 @@ class CartController extends Controller
     public function removeCart(Request $request)
     {
         if (Auth::check()) {
-            UserCart::where('id', $request->id)->delete();
+            UserCart::where('book_id', $request->id)->where('user_id', Auth::user()->id)->delete();
         } else
             \Cart::remove($request->id);
         session()->flash('success', 'Položka bola úspešne odobraná!');
