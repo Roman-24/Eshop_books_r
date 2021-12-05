@@ -19,7 +19,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        $booksPerPage = 10;
+        $booksPerPage = 5;
         $books = Book::query();
 
         $sort = $_GET["sort"] ?? null;

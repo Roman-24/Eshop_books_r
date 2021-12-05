@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
-    var $booksPerPage = 10;
+    var $booksPerPage = 5;
 
     /**
      * Display a listing of the resource.
