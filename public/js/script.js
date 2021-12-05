@@ -7,7 +7,7 @@ if (sorter) {
 
     sorter.addEventListener("change", function (e) {
         // if advanced search is opened
-        if (window.location.href.indexOf("search") > -1) {
+        if (window.location.href.indexOf("search") > -1 ) {
             var form = document.getElementById("advanced-search-form");
             var formAction = form.getAttribute("action");
             form.setAttribute("action", formAction + "?sort=" + e.target.value);

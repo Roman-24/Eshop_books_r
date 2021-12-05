@@ -38,7 +38,6 @@ require __DIR__ . '/auth.php';
 
 Route::post('/search', [CategoryController::class, 'search'])->name('search.store');
 Route::get('/search', [CategoryController::class, 'search'])->name('search.store');
-Route::post('/searchAll', [CategoryController::class, 'searchAll'])->name('searchAll.store');
 
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
 Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');

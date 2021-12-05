@@ -111,17 +111,23 @@ class CategoryController extends Controller
     {
         $books = Book::query();
 
-        $category = $request->get('category');
-        if ($category == "")
-            $category = "%";
-        $price = $request->get('maxprice');
-        if ($price == NULL)
-            $price = 9999999999999;
 
-        $books = $books->where(DB::raw('lower(tittle)'), "like", "%" . strtolower($request->get('tittle')) . "%")
-            ->where(DB::raw('lower(author)'), "like", "%" . strtolower($request->get('author')) . "%")
-            ->where("category", "like", $category)
-            ->where("price", "<", $price);
+        if ($request->get('multiple_params')) {
+            $books = $books->where(DB::raw('lower(tittle)'), "like", "%" . strtolower($request->get('multiple_params')) . "%")
+                ->orWhere(DB::raw('lower(author)'), "like", "%" . strtolower($request->get('multiple_params')) . "%");
+        } else {
+            $category = $request->get('category');
+            if ($category == "")
+                $category = "%";
+            $price = $request->get('maxprice');
+            if ($price == NULL)
+                $price = 9999999999999;
+
+            $books = $books->where(DB::raw('lower(tittle)'), "like", "%" . strtolower($request->get('tittle')) . "%")
+                ->where(DB::raw('lower(author)'), "like", "%" . strtolower($request->get('author')) . "%")
+                ->where("category", "like", $category)
+                ->where("price", "<", $price);
+        }
 
         $sort = $_GET["sort"] ?? null;
         if ($sort) {
