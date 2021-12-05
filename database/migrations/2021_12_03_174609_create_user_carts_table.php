@@ -15,6 +15,7 @@ class CreateUserCartsTable extends Migration
     {
         Schema::create('user_carts', function (Blueprint $table) {
             $table->id();
+            $table->string('book_id');
             $table->string('user_id');
             $table->string('name');
             $table->string('price');
